@@ -1,0 +1,26 @@
+/* You can add global styles to this file, and also import other style files */
+html {
+    height: 100%;
+    box-sizing: border-box;
+  }
+body {
+    position: relative;
+    margin: 0;
+    padding-bottom: 6rem;
+    min-height: 100%;
+    
+  }
+  
+
+/* Styling for Rating Stars */
+.checked {
+    color: rgb(252, 177, 38);
+  }
+
+.checked:hover{
+  color:rgb(255, 166, 0)
+}
+
+.unchecked{
+    color: rgb(175, 170, 170);
+}

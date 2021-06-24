@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Noetic Gaming Portal | Play Games</title>
+  <base href="/">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/x-icon" href="https://img.icons8.com/android/96/000000/controller.png">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+<!-- Noetic Title Font -->
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap" rel="stylesheet">
+
+<!-- Heading Font -->
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@600&display=swap" rel="stylesheet">
+
+<!-- Card Text Font -->
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Mulish:wght@200;300&display=swap" rel="stylesheet">
+
+<!-- Font Awesome Icon Library (Star) -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+</head>
+<body>
+  <app-root>
+    <style>
+      *,
+      *::after,
+      *::before {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      html {
+        font-size: 62.5%;
+      }
+
+      body {
+        overflow: hidden;
+      }
+      
+      #container {
+        display: flex;
+        height: 100vh;
+        width: 100vw;
+        justify-content: center;
+        align-items: center;
+        background: #fff;
+      }
+
+      .loader-container {
+        height: 12em;
+        width: 12em;
+        position: relative;
+        display: block;
+      }
+
+      .cicle-loader {
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        top: 0;
+        left: 0;
+        display: inline-block;
+        border: 0.8em solid rgba(0, 0, 0, .3);
+        border-radius: 50%;
+
+        animation: rotating 1.5s 1s infinite both;
+      }
+
+      .cicle-loader::after {
+        content: '';
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        top: -0.8em;
+        left: -0.8em;
+        display: inline-block;
+        border: 0.8em solid transparent;
+        border-top-color: #666c70;
+        border-radius: 50%;
+        box-sizing: content-box;
+
+        animation: rotating 1.5s infinite both;
+      }
+
+      @keyframes rotating {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+
+    </style>
+    <div id="container">
+      <div class="loader-container">
+        <div class="cicle-loader">
+            <img src="https://img.icons8.com/android/46/000000/controller.png" alt="" style="height: 40px;margin-top: 30%;margin-left: 29%;">
+          
+        </div>
+      </div>
+    </div>
+  </app-root>
+</body>
+</html>
