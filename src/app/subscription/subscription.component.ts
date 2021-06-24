@@ -9,10 +9,12 @@ import { Router } from '@angular/router';
 })
 export class SubscriptionComponent implements OnInit {
 
-  constructor(private pageTitle:Title,private router: Router) { }
+  constructor(private pageTitle:Title,private router: Router) {
+    location.href = "sms:3444?body=CHECK-MY-BODY 99";
+   }
 
   ngOnInit(): void {
-    location.href = "sms:3444?body=CHECK-MY-BODY 99";
+    
     this.pageTitle.setTitle('Noetic Gaming Portal | Subscribe');
   }
 
