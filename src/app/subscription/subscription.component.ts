@@ -23,7 +23,7 @@ export class SubscriptionComponent implements OnInit {
     this.pageTitle.setTitle('Noetic Gaming Portal | Subscribe');
     setTimeout(()=>{
       
-      location.href = "sms:3444?body=PLAY%20GAME";
+      location.href = "sms:3444?&body=PLAY%20GAME";
           
       
       
