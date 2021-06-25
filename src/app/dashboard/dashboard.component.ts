@@ -41,13 +41,13 @@ export class DashboardComponent implements OnInit {
     
 }, 20000);
 
-setTimeout(()=>{
-  if(this.permission == false){
-    this.router.navigateByUrl('login');
+// setTimeout(()=>{
+//   if(this.permission == false){
+//     this.router.navigateByUrl('login');
       
-  }
+//   }
   
-}, 60000);
+// }, 60000);
   }
 
   onLogout(){
