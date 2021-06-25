@@ -3,6 +3,7 @@ import { trigger, transition, useAnimation } from '@angular/animations';
 import { bounceInDown } from 'ng-animate';
 import { AuthenticationGuard } from '.././authentication.guard';
 import { Router } from '@angular/router';
+import {CookieService} from 'ngx-cookie-service';
 
 @Component({
   selector: 'app-dashboard',
@@ -27,7 +28,7 @@ export class DashboardComponent implements OnInit {
   bounceInDown: any;
   visible=true;
 
-  constructor(private authService:AuthenticationGuard,private router: Router) { }
+  constructor(private authService:AuthenticationGuard,private router: Router,private cookieService:CookieService) { }
   
   permission = this.authService.canActivate();
   ngOnInit(): void {
@@ -51,6 +52,7 @@ export class DashboardComponent implements OnInit {
   }
 
   onLogout(){
+    this.cookieService.set('jwt','');
     this.router.navigateByUrl('login');
   }
 

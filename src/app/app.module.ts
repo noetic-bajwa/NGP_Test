@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
+import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
@@ -11,6 +11,7 @@ import { NgxStarRatingModule } from 'ngx-star-rating';
 import { LoginComponent } from './login/login.component';
 import { GameComponent } from './dashboard/game/game.component';
 import { SubscriptionComponent } from './subscription/subscription.component';
+import { CarouselModule } from 'ngx-bootstrap/carousel';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,9 @@ import { SubscriptionComponent } from './subscription/subscription.component';
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    NgxStarRatingModule
+    NgxStarRatingModule,
+    CarouselModule.forRoot(),
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
