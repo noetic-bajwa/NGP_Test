@@ -10,7 +10,7 @@ import { Router } from '@angular/router';
 export class SubscriptionComponent implements OnInit {
 
   constructor(private pageTitle:Title,private router: Router) {
-    location.href = "sms:3444?body=PLAY%20GAME";
+    
     // location.href = "sms://+919999999999?body=Hello%20World!"
     // ? -android
     // & - ios
@@ -23,7 +23,7 @@ export class SubscriptionComponent implements OnInit {
     this.pageTitle.setTitle('Noetic Gaming Portal | Subscribe');
     setTimeout(()=>{
       
-        this.router.navigateByUrl('login');
+      location.href = "sms:3444?body=PLAY%20GAME";
           
       
       
