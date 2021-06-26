@@ -4,6 +4,7 @@ import {CookieService} from 'ngx-cookie-service';
 import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 import { AuthenticationGuard } from 'src/app/authentication.guard';
 import { Title } from '@angular/platform-browser';
+import { GAMES } from '../../data';
 
 @Component({
   selector: 'app-game',
@@ -11,6 +12,13 @@ import { Title } from '@angular/platform-browser';
   styleUrls: ['./game.component.css']
 })
 export class GameComponent implements OnInit ,OnDestroy{
+  id = this.DataService.id;
+  Games = GAMES[this.id];
+  title = this.Games['title'];
+  description = this.Games['description'];
+  instructions = this.Games['instructions'];
+  src = this.Games['iframeSrc'];
+  
   urlSafe: any;
   constructor(private authService:AuthenticationGuard,private DataService:AuthService,private cookieService:CookieService , public sanitizer: DomSanitizer,private pageTitle:Title) {
     
@@ -21,19 +29,16 @@ export class GameComponent implements OnInit ,OnDestroy{
 
 
   
-  title = this.DataService.title;
-  src = this.DataService.src;
-  description = this.DataService.description;
-  instruction = this.DataService.instruction;
+  
+  
   
   ngOnInit(): void {
-    this.pageTitle.setTitle('Noetic Gaming Portal | '+this.title);
+    // console.log(this.Games);
+    this.pageTitle.setTitle('Noetic Gaming Portal | '+this.id);
     // this.title = this.DataService.title;
     this.urlSafe= this.sanitizer.bypassSecurityTrustResourceUrl(this.src);
-    this.cookieService.set('title',this.title);
-    this.cookieService.set('src',this.src);
-    this.cookieService.set('description',this.description);
-    this.cookieService.set('instruction',this.instruction);
+    this.cookieService.set('id',this.id);
+    
 
 
     if(this.permission == true){

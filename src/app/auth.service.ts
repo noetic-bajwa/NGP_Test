@@ -12,12 +12,7 @@ const httpOptions = {
   providedIn: 'root'
 })
 export class AuthService {
-  title = this.cookieService.get('title');
-  src = this.cookieService.get('src');
-  description = this.cookieService.get('description');
-  instruction = this.cookieService.get('instruction');
-  
-  
+  id = this.cookieService.get('id');
 
   constructor(private http: HttpClient,private cookieService:CookieService) { }
   login(user:any){

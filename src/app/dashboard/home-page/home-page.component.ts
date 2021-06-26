@@ -52,12 +52,13 @@ export class HomePageComponent implements OnInit {
      
   }
 
-  onClick(ref:any,desc:any,inst:any){
+  onClick(ref:any){
     // this.cookieService.set('title',title)
-    this.dataService.title = ref.innerHTML;
-    this.dataService.src = ref.href;
-    this.dataService.description = desc.innerHTML;
-    this.dataService.instruction = inst.innerHTML;
+    // alert(ref);
+    this.dataService.id = ref;
+    // this.dataService.src = ref.href;
+    // this.dataService.description = desc.innerHTML;
+    // this.dataService.instruction = inst.innerHTML;
     this.router.navigateByUrl('game');
     // alert(inst.innerHTML);
 
