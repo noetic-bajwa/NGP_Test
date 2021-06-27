@@ -7,7 +7,8 @@ export const GAMES:any = [
         instructions:"Mouse control and touch control on mobile",
         category:['Action','Arcade'],
         imgURL:"/assets/Games Assets/Temple Run 2/images/2.jpg",
-        iframeSrc:"https://html5.gamemonetize.com/pkyyuilfrqkcdnmrxsg60j22ypk0peje/"
+        iframeSrc:"https://html5.gamemonetize.com/pkyyuilfrqkcdnmrxsg60j22ypk0peje/",
+        rating:4
     },
     {
         id:1,
@@ -17,22 +18,24 @@ export const GAMES:any = [
         instructions:"Mouse control and touch control on mobile",
         category:['Action','Arcade','Adventure'],
         imgURL:"/assets/Games Assets/Hunter Assassin/images/1.jpg",
-        iframeSrc:"https://html5.gamemonetize.com/l1c9pkpxysqy1cao2axakpf8mdwkv8qg/" 
+        iframeSrc:"https://html5.gamemonetize.com/l1c9pkpxysqy1cao2axakpf8mdwkv8qg/" ,
+        rating:5
     },
     {
         id:2,
-        title:"Candy Crush Saga King",
+        title:"Candy Crush Saga",
         tag:"new",
         description:"Plan your moves by matching 3 or more candies in a row, using boosters wisely in order to overcome those extra sticky puzzles! Blast the chocolate and collect sweet candy across thousands of levels, guaranteed to have you craving more!",
         instructions:"Start playing Candy Crush Saga today by moving sweet candies.",
         category:['Hypercasual','Puzzle'],
         imgURL:"/assets/Games Assets/Candy Crush Saga King/images/2.jpg",
-        iframeSrc:"https://html5.gamemonetize.com/ushitaltif0ig5by3w54p4cy9sd3yptt/" 
+        iframeSrc:"https://html5.gamemonetize.com/ushitaltif0ig5by3w54p4cy9sd3yptt/",
+        rating:5 
     },
     {
         id:3,
         title:"King",
-        tag:"popular",
+        tag:"new",
         description:"Plan your moves by matching 3 or more candies in a row, using boosters wisely in order to overcome those extra sticky puzzles! Blast the chocolate and collect sweet candy across thousands of levels, guaranteed to have you craving more!",
         instructions:"Start playing Candy Crush Saga today by moving sweet candies.",
         category:['Hypercasual','Puzzle'],

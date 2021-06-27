@@ -11,8 +11,8 @@ import { NgxStarRatingModule } from 'ngx-star-rating';
 import { LoginComponent } from './login/login.component';
 import { GameComponent } from './dashboard/game/game.component';
 import { SubscriptionComponent } from './subscription/subscription.component';
-import { CarouselModule } from 'ngx-bootstrap/carousel';
 import { HttpClientModule } from '@angular/common/http';
+
 
 @NgModule({
   declarations: [
@@ -29,7 +29,6 @@ import { HttpClientModule } from '@angular/common/http';
     AppRoutingModule,
     BrowserAnimationsModule,
     NgxStarRatingModule,
-    CarouselModule.forRoot(),
     HttpClientModule
   ],
   providers: [],

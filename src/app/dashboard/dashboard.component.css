@@ -9,7 +9,7 @@
   }
 
   #brand{
-    font-family: 'Fredoka One', cursive;
+    font-family: 'Mulish', sans-serif;
     font-size: 31px;
   }
 
@@ -25,14 +25,12 @@
 
 @media only screen and (max-width: 500px) {
   #brand{
-    font-family: 'Fredoka One', cursive;
     font-size: 28px;
   }
 }
 
 @media only screen and (max-width: 450px) {
   #brand{
-    font-family: 'Fredoka One', cursive;
     font-size: 25px;
   }
   .navbar-toggler{
@@ -43,7 +41,6 @@
 
 @media only screen and (max-width: 401px) {
   #brand{
-    font-family: 'Fredoka One', cursive;
     font-size: 23px;
   }
   .navbar-toggler{

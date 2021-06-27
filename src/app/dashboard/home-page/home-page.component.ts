@@ -1,56 +1,35 @@
 import { Component, OnInit } from '@angular/core';
-import { trigger, transition, useAnimation } from '@angular/animations';
-import { jello } from 'ng-animate';
 import { AuthenticationGuard } from 'src/app/authentication.guard';
 import { GAMES } from '../../data';
 import { AuthService } from 'src/app/auth.service';
 import { Router } from '@angular/router';
 import {CookieService} from 'ngx-cookie-service';
+declare let AOS: any;
 
 @Component({
   selector: 'app-home-page',
   templateUrl: './home-page.component.html',
-  styleUrls: ['./home-page.component.css'] ,
-  animations: [
-    trigger('jello', [transition('* => *', useAnimation(jello))])
-  ]
+  styleUrls: ['./home-page.component.css'] 
 })
 export class HomePageComponent implements OnInit {
   
   Games = GAMES;
-
-  jello: any;
   playmsg:any="";
   visibility=true;
   
-  constructor(private authService:AuthenticationGuard , private dataService:AuthService , private router: Router , private cookieService:CookieService) { }
+  constructor(private authService:AuthenticationGuard , private dataService:AuthService , private router: Router , private cookieService:CookieService) { 
+    console.log(AOS); // loaded script
+  }
   permission = this.authService.canActivate();
   ngOnInit(): void {
-  }
-  onMouseOver(game:any,image:any){
-    game.hidden = false;
+    AOS.init();
     if(this.permission == true){
-      game.innerHTML =  "Let's Play"
-      image.src = "https://img.icons8.com/metro/40/000000/play.png"
-     
+      this.playmsg = "Let's Play";
+    }else{
+      this.playmsg = "Login to Play";
     }
-    else{
-      game.innerHTML = "Login To Play"
-      image.src = "https://img.icons8.com/android/40/000000/lock.png"
-    }
-    
-    
-    
-   
-    
   }
-  onMouseOut(game:any,image:any){
-    game.innerHTML = ""
-    image.src = ""
-    this.visibility=true;
-    game.hidden = true;
-     
-  }
+
 
   onClick(ref:any){
     // this.cookieService.set('title',title)
