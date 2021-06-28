@@ -201,3 +201,20 @@ h5{
     transform: translate3d(0, 0, 0);
    }
  
+   .blink_me {
+    animation: blinker 1s linear infinite;
+  }
+  @keyframes blinker {
+    50% {
+      opacity: 0;
+    }
+  }
+
+  .small{
+      padding:5px
+  }
+  @media screen and (max-width: 480px) {
+    .small {
+      padding: 2px;
+    }
+  }

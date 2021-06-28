@@ -1,24 +1,27 @@
 <div class="continer" style="padding-top:50px;padding-bottom: 50px;background-color: #ee696b0e;">
-  <div id="carouselExampleIndicators" data-interval="10000"  class="carousel slide" data-ride="carousel">
+  <div id="carouselExampleIndicators" data-interval="10000"  class=" carousel slide carousel-fade" data-ride="carousel">
     <div class="carousel-inner">
       <div class="carousel-item col text-center " style="border:none">
         
-        <img data-aos="flip-down" class="text-center" src="assets/Login Slider/pubg.png" height="400px" width="400px" alt="First slide">
+        <img data-aos="flip-down" class="img-fluid" src="assets/Login Slider/pubg.png" height="400px" width="400px" alt="First slide">
       </div>
       <div class="carousel-item col text-center " style="border:none">
-        <img data-aos="flip-down" class="" src="assets/Login Slider/pubg.png" height="400px" width="400px" alt="Second slide">
+        <img data-aos="flip-down" class="img-fluid" src="assets/Login Slider/pubg.png" height="400px" width="400px" alt="Second slide">
       </div>
       <div class="carousel-item col text-center active" style="border:none">
-        <img data-aos="flip-down" class="" src="assets/Login Slider/pubg.png" height="400px" width="400px" alt="Third slide">
+        <img data-aos="flip-down" class="img-fluid" src="assets/Login Slider/pubg.png" height="400px" width="400px" alt="Third slide">
       </div>
     </div>
   </div>
   <div class="row justify-content-center"> 
-    <div>
-      <button class="login_btn mr-2">LOGIN</button>
+    <div class="col text-center">
+      <button class="login_btn mr-2 mt-2">LOGIN</button>
+      <button class="subscribe_btn mt-2">SUBSCRIBE NOW !</button>
     </div>
-    <div>
-      <button class="subscribe_btn">SUBSCRIBE NOW !</button>
+  </div>
+  <div class="row justify-content-center mt-3"> 
+    <div class="col text-center">
+      <img class="blink_me" src="assets/Home Page/drop down.png" style="width: 28px;" alt="">
     </div>
   </div>
 
@@ -27,7 +30,7 @@
 
 <div class="container-fluid" style="padding-bottom: 100px;background-color: #ee696b0e;">
   <div class="container pt-5" style="position:relative;">
-    <h5>NEW GAMES</h5>
+    <img class="d-inline-block" style="height: 24px;margin-bottom: 5px;" src="assets/Home Page/pink.png" /><h5 class="d-inline-block ">NEW GAMES</h5>
     <div class="row " style="justify-content: center;">
       <div *ngFor="let game of Games;" class="col-md-6 col-lg-3 mt-5" data-aos="zoom-out-right">
         <div *ngIf="game.tag == 'new'"  (click)="onClick(game.id)" class="card"  style="width: fit-content;height:100%;">
@@ -41,7 +44,7 @@
             <p ><a   style="color: rgba(0, 0, 0, 0.726);" >{{game.title}}</a></p>
             
           </div>
-          <div class="text-center msg">
+          <div class=" text-center msg">
             {{playmsg}}
           </div>
         </div>
@@ -55,7 +58,7 @@
 
 <div class="container-fluid" style="padding-bottom: 100px">
   <div class="container pt-5" style="position:relative;">
-    <h5>POPULAR GAMES</h5>
+    <img class="d-inline-block" style="height: 24px;margin-bottom: 5px;" src="assets/Home Page/purple.png" /><h5 class="d-inline-block ">POPULAR GAMES</h5>
     <div class="row " style="justify-content: center;">
       <div *ngFor="let game of Games;" class="col-6 col-md-6 col-lg-3 mt-5" data-aos="flip-right">
         <div *ngIf="game.tag == 'new'"  (click)="onClick(game.id)" class="card"  style="width: fit-content;height:100%;border-color: #AE2D68;">
@@ -69,7 +72,7 @@
             <p ><a   style="color: rgba(0, 0, 0, 0.726);" >{{game.title}}</a></p>
             
           </div>
-          <div class="text-center msg2">
+          <div class="small text-center msg2">
             {{playmsg}}
           </div>
         </div>
@@ -89,7 +92,7 @@
 
 <div class="container-fluid mt-5" style="padding-bottom: 100px;background-color: #ee696b0e;">
   <div class="container pt-5" style="position:relative;">
-    <h5>GAMES YOU MAY LIKE</h5>
+    <img class="d-inline-block" style="height: 24px;margin-bottom: 5px;" src="assets/Home Page/pink.png" /><h5 class="d-inline-block ">GAMES YOU MAY LIKE</h5>
     <div class="row " style="justify-content: center;">
       <div *ngFor="let game of Games;" class="col-6 col-md-6 col-lg-3 mt-5" data-aos="flip-left">
         <div *ngIf="game.tag == 'new'"  (click)="onClick(game.id)" class="card"  style="width: fit-content;height:100%;">
@@ -103,7 +106,7 @@
             <p ><a   style="color: rgba(0, 0, 0, 0.726);" >{{game.title}}</a></p>
             
           </div>
-          <div class="text-center msg">
+          <div class="small text-center msg">
             {{playmsg}}
           </div>
         </div>
