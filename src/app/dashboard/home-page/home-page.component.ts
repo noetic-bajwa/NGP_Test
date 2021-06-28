@@ -4,7 +4,7 @@ import { GAMES } from '../../data';
 import { AuthService } from 'src/app/auth.service';
 import { Router } from '@angular/router';
 import {CookieService} from 'ngx-cookie-service';
-declare let AOS: any;
+
 
 @Component({
   selector: 'app-home-page',
@@ -18,11 +18,11 @@ export class HomePageComponent implements OnInit {
   visibility=true;
   
   constructor(private authService:AuthenticationGuard , private dataService:AuthService , private router: Router , private cookieService:CookieService) { 
-    console.log(AOS); // loaded script
+    
   }
   permission = this.authService.canActivate();
   ngOnInit(): void {
-    AOS.init();
+    
     if(this.permission == true){
       this.playmsg = "Let's Play";
     }else{
