@@ -40,7 +40,7 @@ export class DashboardComponent implements OnInit {
         
     }
     
-}, 20000);
+}, 2000);
 
 // setTimeout(()=>{
 //   if(this.permission == false){

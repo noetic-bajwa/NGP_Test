@@ -121,7 +121,7 @@ h5{
     font-size: 13px;
     font-weight: 900;
     color: #660F56;
-    background-color: ivory;
+    background-color: rgb(255, 255, 255);
     padding: 5px;
     border-radius: 35px;
     border: solid #660F56;
@@ -149,7 +149,7 @@ h5{
 .login_btn{
     /* background-color: ivory; */
     border: 1px solid #660F56 ;
-    background-color: ivory;
+    background-color: rgba(255, 255, 255, 0);
     border-radius: 25px;
     width: 190px;
     padding: 10px;
@@ -157,6 +157,7 @@ h5{
     font-family: 'Mulish', sans-serif;
     font-size: 14px;
     font-weight: 900;
+    outline:none;
 }
 
 .subscribe_btn{
@@ -170,7 +171,33 @@ h5{
     font-family: 'Mulish', sans-serif;
     font-size: 14px;
     font-weight: 900;
+    outline:none;
 }
 
 
+.carousel-fade .carousel-item {
+    opacity: 0;
+    transition-duration: .6s;
+    transition-property: opacity;
+   }
+   
+   .carousel-fade  .carousel-item.active,
+   .carousel-fade  .carousel-item-next.carousel-item-left,
+   .carousel-fade  .carousel-item-prev.carousel-item-right {
+     opacity: 1;
+   }
+   
+   .carousel-fade .active.carousel-item-left,
+   .carousel-fade  .active.carousel-item-right {
+    opacity: 0;
+   }
+   
+   .carousel-fade  .carousel-item-next,
+   .carousel-fade .carousel-item-prev,
+   .carousel-fade .carousel-item.active,
+   .carousel-fade .active.carousel-item-left,
+   .carousel-fade  .active.carousel-item-prev {
+    transform: translateX(0);
+    transform: translate3d(0, 0, 0);
+   }
  

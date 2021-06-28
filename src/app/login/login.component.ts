@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Title } from '@angular/platform-browser';
-
+declare let AOS: any;
 
 // import { OwlOptions } from 'ngx-owl-carousel-o';
 
@@ -20,7 +20,7 @@ export class LoginComponent implements OnInit {
   constructor(private pageTitle:Title) { }
   
   ngOnInit(): void {
-    
+    AOS.init();
     this.pageTitle.setTitle('Noetic Gaming Portal | Login');
   }
   
