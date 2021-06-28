@@ -12,16 +12,19 @@ declare let AOS: any;
   styleUrls: ['./home-page.component.css'] 
 })
 export class HomePageComponent implements OnInit {
-  
+  number = Math.floor(Math.random() * (3 - 0 + 1)) + 0;
+  // Math.floor(Math.random() * (max - min + 1)) + min;
   Games = GAMES;
   playmsg:any="";
   visibility=true;
+  isActive=this.number;
   
   constructor(private authService:AuthenticationGuard , private dataService:AuthService , private router: Router , private cookieService:CookieService) { 
     
   }
   permission = this.authService.canActivate();
   ngOnInit(): void {
+    console.log(this.number);
     AOS.init();
     
     if(this.permission == true){

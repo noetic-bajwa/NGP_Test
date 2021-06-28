@@ -1,15 +1,18 @@
 <div class="continer" style="padding-top:50px;padding-bottom: 50px;background-color: #ee696b0e;">
-  <div id="carouselExampleIndicators" data-interval="2000"  class=" carousel slide carousel-fade" data-ride="carousel">
+  <div id="carouselExampleIndicators" data-interval="10000"  class=" carousel slide carousel-fade"  data-ride="carousel">
     <div class="carousel-inner">
-      <div class="carousel-item col text-center active " style="border:none">
+      <div class="carousel-item col text-center" [ngClass]="{'active': isActive == 0}" style="border:none">
         
         <img data-aos="flip-down" class="img-fluid" src="assets/Login Slider/pubg.png" height="400px" width="400px" alt="First slide">
       </div>
-      <div class="carousel-item col text-center " style="border:none">
-        <img data-aos="flip-down" class="img-fluid" src="assets/Login Slider/mario.png" height="400px" width="400px" alt="Second slide">
+      <div class="carousel-item col text-center" [ngClass]="{'active': isActive == 1}" style="border:none">
+        <img  class="img-fluid" src="assets/Login Slider/mario.png" height="400px" width="400px" alt="Second slide">
       </div>
-      <div class="carousel-item col text-center " style="border:none">
-        <img data-aos="flip-down" class="img-fluid" src="assets/Login Slider/pubg.png" height="400px" width="400px" alt="Third slide">
+      <div class="carousel-item col text-center" [ngClass]="{'active': isActive == 2}" style="border:none">
+        <img  class="img-fluid" src="assets/Login Slider/candy.png" height="400px" width="400px" alt="Third slide">
+      </div>
+      <div class="carousel-item col text-center" [ngClass]="{'active': isActive == 3}" style="border:none">
+        <img  class="img-fluid" src="assets/Login Slider/angryBird.png" height="400px" width="400px" alt="Third slide">
       </div>
     </div>
   </div>
@@ -21,7 +24,7 @@
   </div>
   <div class="row justify-content-center mt-3"> 
     <div class="col text-center">
-      <img class="blink_me" src="assets/Home Page/drop down.png" style="width: 28px;" alt="">
+      <img class="blink_me" src="assets/Home Page/drop down.png" style="width: 30px;" alt="">
     </div>
   </div>
 
@@ -117,3 +120,7 @@
 
   
 </div>
+
+<script>
+  $("#myCarousel").carousel();
+</script>

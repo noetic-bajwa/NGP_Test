@@ -35,7 +35,7 @@ export class DashboardComponent implements OnInit {
     
   setTimeout(()=>{
     if(this.permission == false){
-      this.visible = false;  
+      // this.visible = false;  
       // alert('Please Login')
         
     }
