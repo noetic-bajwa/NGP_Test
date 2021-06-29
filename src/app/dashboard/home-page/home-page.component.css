@@ -160,6 +160,10 @@ h5{
     outline:none;
 }
 
+.contain {
+    object-fit: contain;
+  }
+
 .subscribe_btn{
     background: rgb(2,0,36);
     background: linear-gradient(90deg, rgb(102, 15, 86) 0%, rgb(238, 105, 107) 100%);
@@ -202,7 +206,7 @@ h5{
    }
  
    .blink_me {
-    animation: blinker 1s linear infinite;
+    animation: blinker 1.5s linear infinite;
   }
   @keyframes blinker {
     50% {

@@ -14,27 +14,43 @@ top: 0;">
     </div>
   </div> -->
 
-<div class="continer" style="padding-top:50px;background-color: #ee696b0e;height:100%;width: 100%; left: 0;position: fixed;
+<div  style="padding-top:50px;background-color: #ee696b0e;height:100%;width: 100%; left: 0;position: fixed;
 top: 0;">
-    <div id="carouselExampleIndicators" data-interval="2000"  class="carousel slide carousel-fade" data-ride="carousel">
-      <div class="carousel-inner">
-        <div class="carousel-item col text-center " style="border:none">
+    <div id="carouselExampleIndicators" data-interval="200000"  class=" carousel slide carousel-fade"  data-ride="carousel">
+        <div data-aos="flip-down" class="carousel-inner">
           
-          <img data-aos="flip-down" class="img-fluid" src="assets/Login Slider/pubg.png" height="400px" width="400px" alt="First slide">
-        </div>
-        
-        <div class="carousel-item col text-center active" style="border:none">
-          <img data-aos="flip-down" class="img-fluid" src="assets/Login Slider/mario.png" height="400px" width="400px" alt="Third slide">
-        </div>
-        <div class="carousel-item col text-center " style="border:none">
-            <img data-aos="flip-down" class="img-fluid" src="assets/Login Slider/pubg.png" height="400px" width="400px" alt="Second slide">
+          <div   class="carousel-item col text-center" [ngClass]="{'active': isActive == 0}"  style="border:none">
+            <img  class="contain" style="object-fit: contain;width:100%;
+            height: 300px;" src="assets/Login Slider/angryBird1.png"  alt="First slide">
           </div>
+    
+          <div   class="carousel-item col text-center" [ngClass]="{'active': isActive == 1}" style="border:none">
+            <img   src="assets/Login Slider/candy1.png"  style="object-fit: contain;width:100%;height: 300px;" alt="Second slide">
+          </div>
+    
+          <div  class="carousel-item col text-center" [ngClass]="{'active': isActive == 2}"  style="border:none">
+            <img src="assets/Login Slider/mario1.png" style="object-fit: contain;width:100%;height: 300px;"   alt="Third slide">
+          </div>
+    
+          <div  class="carousel-item col text-center" [ngClass]="{'active': isActive == 3}"  style="border:none">
+            <img  src="assets/Login Slider/angryBird2.png" style="object-fit: contain;width:100%;height: 300px;"  alt="Third slide">
+          </div>
+    
+          <div  class="carousel-item col text-center" [ngClass]="{'active': isActive == 4}"  style="border:none">
+            <img  src="assets/Login Slider/candy2.png" style="object-fit: contain;width:100%;height: 300px;"   alt="Third slide">
+          </div>
+    
+          <div   class="carousel-item col text-center" [ngClass]="{'active': isActive == 5}"  style="border:none">
+            <img  class="img-fluid" src="assets/Login Slider/mario2.png" style="object-fit: contain;width:100%;height: 300px;"   alt="Third slide">
+          </div>
+         
+    
+        </div>
       </div>
-    </div>
     <div class="row justify-content-center"> 
       <div class="col text-center">
-        <input class="login_btn mr-2 mt-2" placeholder="03XX1234567" />
-        <button class="subscribe_btn mt-2">PLAY NOW</button>
+        <input type="number" class="login_btn mr-2 ml-2 mt-2" placeholder="03XX1234567" />
+        <button class="subscribe_btn ml-2 mr-2 mt-2">PLAY NOW</button>
       </div>
     </div>
     <div class="row justify-content-center mt-2"> 

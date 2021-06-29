@@ -14,7 +14,8 @@ declare let AOS: any;
 
 
 export class LoginComponent implements OnInit {
-  
+  number = Math.floor(Math.random() * (5 - 0 + 1)) + 0;
+  isActive=this.number;
   
   
   constructor(private pageTitle:Title) { }

@@ -1,22 +1,36 @@
-<div class="continer" style="padding-top:50px;padding-bottom: 50px;background-color: #ee696b0e;">
+<div  class="continer" style="padding-top:50px;padding-bottom: 50px;background-color: #ee696b0e;">
   <div id="carouselExampleIndicators" data-interval="10000"  class=" carousel slide carousel-fade"  data-ride="carousel">
-    <div class="carousel-inner">
-      <div class="carousel-item col text-center" [ngClass]="{'active': isActive == 0}" style="border:none">
-        
-        <img data-aos="flip-down" class="img-fluid" src="assets/Login Slider/pubg.png" height="400px" width="400px" alt="First slide">
+    <div data-aos="flip-down" class="carousel-inner">
+      
+      <div   class="carousel-item col text-center" [ngClass]="{'active': isActive == 0}"  style="border:none">
+        <img  class="contain" style="object-fit: contain;width:100%;
+        height: 300px;" src="assets/Login Slider/angryBird1.png"  alt="First slide">
       </div>
-      <div class="carousel-item col text-center" [ngClass]="{'active': isActive == 1}" style="border:none">
-        <img  class="img-fluid" src="assets/Login Slider/mario.png" height="400px" width="400px" alt="Second slide">
+
+      <div   class="carousel-item col text-center" [ngClass]="{'active': isActive == 1}" style="border:none">
+        <img   src="assets/Login Slider/candy1.png"  style="object-fit: contain;width:100%;height: 300px;" alt="Second slide">
       </div>
-      <div class="carousel-item col text-center" [ngClass]="{'active': isActive == 2}" style="border:none">
-        <img  class="img-fluid" src="assets/Login Slider/candy.png" height="400px" width="400px" alt="Third slide">
+
+      <div  class="carousel-item col text-center" [ngClass]="{'active': isActive == 2}"  style="border:none">
+        <img src="assets/Login Slider/mario1.png" style="object-fit: contain;width:100%;height: 300px;"   alt="Third slide">
       </div>
-      <div class="carousel-item col text-center" [ngClass]="{'active': isActive == 3}" style="border:none">
-        <img  class="img-fluid" src="assets/Login Slider/angryBird.png" height="400px" width="400px" alt="Third slide">
+
+      <div  class="carousel-item col text-center" [ngClass]="{'active': isActive == 3}"  style="border:none">
+        <img  src="assets/Login Slider/angryBird2.png" style="object-fit: contain;width:100%;height: 300px;"  alt="Third slide">
       </div>
+
+      <div  class="carousel-item col text-center" [ngClass]="{'active': isActive == 4}"  style="border:none">
+        <img  src="assets/Login Slider/candy2.png" style="object-fit: contain;width:100%;height: 300px;"   alt="Third slide">
+      </div>
+
+      <div   class="carousel-item col text-center" [ngClass]="{'active': isActive == 5}"  style="border:none">
+        <img  class="img-fluid" src="assets/Login Slider/mario2.png" style="object-fit: contain;width:100%;height: 300px;"   alt="Third slide">
+      </div>
+     
+
     </div>
   </div>
-  <div class="row justify-content-center"> 
+  <div class="row justify-content-center mt-4"> 
     <div class="col text-center">
       <button class="login_btn mr-2 mt-2">LOGIN</button>
       <button class="subscribe_btn mt-2">SUBSCRIBE NOW !</button>
@@ -24,16 +38,16 @@
   </div>
   <div class="row justify-content-center mt-3"> 
     <div class="col text-center">
-      <img class="blink_me" src="assets/Home Page/drop down.png" style="width: 30px;" alt="">
+      <img (click)="scroll(target)" class="blink_me" src="assets/Home Page/drop down.png" width="30px" alt="">
     </div>
   </div>
 
 </div>
 
 
-<div class="container-fluid" style="padding-bottom: 100px;background-color: #ee696b0e;">
+<div #target class="container-fluid" style="padding-bottom: 100px;background-color: #ee696b0e;">
   <div class="container pt-5" style="position:relative;">
-    <img class="d-inline-block" style="height: 24px;margin-bottom: 5px;" src="assets/Home Page/pink.png" /><h5 class="d-inline-block ">NEW GAMES</h5>
+    <img  class="d-inline-block" style="height: 24px;margin-bottom: 5px;" src="assets/Home Page/pink.png" /><h5 class="d-inline-block ">NEW GAMES</h5>
     <div class="row " style="justify-content: center;">
       <div *ngFor="let game of Games;" class="col-md-6 col-lg-3 mt-5" data-aos="zoom-out-right">
         <div *ngIf="game.tag == 'new'"  (click)="onClick(game.id)" class="card"  style="width: fit-content;height:100%;">

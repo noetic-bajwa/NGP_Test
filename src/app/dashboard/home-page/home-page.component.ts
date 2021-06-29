@@ -12,7 +12,7 @@ declare let AOS: any;
   styleUrls: ['./home-page.component.css'] 
 })
 export class HomePageComponent implements OnInit {
-  number = Math.floor(Math.random() * (3 - 0 + 1)) + 0;
+  number = Math.floor(Math.random() * (5 - 0 + 1)) + 0;
   // Math.floor(Math.random() * (max - min + 1)) + min;
   Games = GAMES;
   playmsg:any="";
@@ -46,5 +46,7 @@ export class HomePageComponent implements OnInit {
     // alert(inst.innerHTML);
 
   }
-
+  scroll(el: HTMLElement) {
+    el.scrollIntoView();
+}
 }

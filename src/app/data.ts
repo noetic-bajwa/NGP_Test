@@ -39,7 +39,7 @@ export const GAMES:any = [
         description:"Plan your moves by matching 3 or more candies in a row, using boosters wisely in order to overcome those extra sticky puzzles! Blast the chocolate and collect sweet candy across thousands of levels, guaranteed to have you craving more!",
         instructions:"Start playing Candy Crush Saga today by moving sweet candies.",
         category:['Hypercasual','Puzzle'],
-        imgURL:"/assets/Games Assets/Candy Crush Saga King/images/2.jpg",
+        imgURL:"/assets/Games Assets/Fast Lane Racing/1.jpg",
         iframeSrc:"https://subscription.marketjs.com/serve?portal_id=5692266857365504&game_id=6496463023505408&branding_id=5169425925799936&ad_id=5185095820378112&portal_localization_id=6207741047603200" 
     }
 
