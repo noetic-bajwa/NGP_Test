@@ -13,11 +13,12 @@ top: 0;">
       </div>
     </div>
   </div> -->
-
+{{partner}}
+{{trackerId}}
   <div  style="padding-top:50px;background-color: #ee696b0e;height:100%;width: 100%; left: 0;position: fixed;
   top: 0;">
   <div class="row" style="justify-content: center;margin-top: -30px;margin-bottom: 20px;">
-    <img src="assets/logo.png" height="30px">
+    <img [@bounceInDown]="bounceInDown" routerLink="" src="assets/logo.webp" height="30px">
   </div>
   <div class="row justify-content-center mt-0"> 
       
@@ -51,26 +52,26 @@ top: 0;">
             </div>
       
             <div   class="carousel-item col text-center" [ngClass]="{'active': isActive == 5}"  style="border:none">
-              <img  class="img-fluid" src="assets/Login Slider/mario2.webp" style="object-fit: contain;width:100%;height: 320px;"   alt="Third slide">
+              <img  class="img-fluid" src="assets/Login Slider/mario2.webp" style="object-fit: contain;width:100%;height: 325px;"   alt="Third slide">
             </div>
            
       
           </div>
         </div>
       <div class="row justify-content-center"> 
-        <div class="col text-center">
-            
-            <p class="marketing_lines mt-4">Time to play it all</p>
-            <br>
-          <button class="subscribe_btn ml-2 mr-2 mt-0"><a href="sms:3444?&body=NGP%20PLAY%20GAME">PLAY NOW</a></button>
+        <div class="col text-center mt-2">
+          <button class="subscribe_btn ml-2 mr-2 mt-0"><a [href]="'sms:3444?&body=NGP%20PLAY%20GAME'+partner+':'+trackerId">PLAY NOW</a></button>
         </div>
       </div>
       <div class="row justify-content-center mt-1"> 
           <div class="col text-center">
-            <small >PKR 25+ tax per 3 days</small>
+            <small>Only pay when you want to play</small>
             <br>
-            <small>Only pay when you want to play, no subscription</small>
+            <small>No subscription</small>
+            <br>
+            <small >PKR 25+ tax per 3 days</small>
           </div>
+          
         </div>
     
     </div>

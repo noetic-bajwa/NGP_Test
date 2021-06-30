@@ -179,6 +179,11 @@ h5{
     
 }
 
+.marketing_lines{
+    letter-spacing: 0.15rem;
+    color: #660F56;
+    line-height: 0.55rem;
+}
 
 .carousel-fade .carousel-item {
     opacity: 0;
@@ -223,3 +228,21 @@ h5{
       padding: 2px;
     }
   }
+
+  .sub_shinner{ 
+    mask-image: linear-gradient(-75deg, rgba(0,0,0,.6) 30%, #000 50%, rgba(0,0,0,.6) 70%) !important;
+    mask-size: 200% !important;
+    animation: shine 2s linear infinite !important;
+    color: ivory;
+       
+ }
+
+ @keyframes shine {
+    from { -webkit-mask-position: 150%; }
+    to { -webkit-mask-position: -50%; }
+  }
+ .marketing_lines{
+     letter-spacing: 0.15rem;
+     color: #660F56;
+     line-height: 0.55rem;
+ }

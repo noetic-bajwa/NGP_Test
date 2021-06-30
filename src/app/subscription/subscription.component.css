@@ -180,13 +180,13 @@ h5{
     background: rgb(2,0,36);
     background: linear-gradient(90deg, rgb(102, 15, 86) 0%, rgb(238, 105, 107) 100%);
     border-radius: 25px;
-    width: 190px;
+    width: 210px;
     padding: 10px;
     color: ivory;
     border : none;
     font-family: 'Mulish', sans-serif;
-    font-size: 14px;
-    font-weight: 900;
+    font-size: 16px;
+    font-weight: 1000;
     outline: none;
 }
 
