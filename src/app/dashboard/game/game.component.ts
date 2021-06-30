@@ -5,22 +5,24 @@ import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 import { AuthenticationGuard } from 'src/app/authentication.guard';
 import { Title } from '@angular/platform-browser';
 import { GAMES } from '../../data';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-game',
   templateUrl: './game.component.html',
   styleUrls: ['./game.component.css']
 })
-export class GameComponent implements OnInit ,OnDestroy{
+export class GameComponent implements OnInit {
   id = this.DataService.id;
   Games = GAMES[this.id];
+  SimilarGames = GAMES;
   title = this.Games['title'];
   description = this.Games['description'];
   instructions = this.Games['instructions'];
   src = this.Games['iframeSrc'];
   
   urlSafe: any;
-  constructor(private authService:AuthenticationGuard,private DataService:AuthService,private cookieService:CookieService , public sanitizer: DomSanitizer,private pageTitle:Title) {
+  constructor(private authService:AuthenticationGuard,private DataService:AuthService,private cookieService:CookieService , public sanitizer: DomSanitizer,private pageTitle:Title,private router: Router) {
     
    }
    allow:boolean=false;
@@ -49,25 +51,24 @@ export class GameComponent implements OnInit ,OnDestroy{
     
   }
 
-  ngDoCheck() {
-    // ...
-  }
-  // @Input() title: string = "";
-  ngOnDestroy() {
-    console.log("DESTROYED");
-    // this.cookieService.set('title','')
-  }
-
+  
+  
   onClick(){
     if(this.permission == false){
       alert('Please Login')
     }
   }
+  
+  // onClick2(ref:any){
+  //   this.DataService.id = ref;
+  //   this.cookieService.set('id',ref);
+  //   this.id = ref;
+  //   this.router.navigateByUrl('game');
+
+  // }
 
   
 
-  onKeyup(event:any){
-    alert("help");
-  }
+  
   
 }

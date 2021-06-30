@@ -15,6 +15,7 @@ export class HomePageComponent implements OnInit {
   number = Math.floor(Math.random() * (5 - 0 + 1)) + 0;
   // Math.floor(Math.random() * (max - min + 1)) + min;
   Games = GAMES;
+  
   playmsg:any="";
   visibility=true;
   isActive=this.number;

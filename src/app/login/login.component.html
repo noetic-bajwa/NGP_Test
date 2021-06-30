@@ -62,15 +62,18 @@ top: 0;">
             
             <p class="marketing_lines mt-4">Time to play it all</p>
             <br>
-          <input class="login_btn ml-2 mr-2 mt-2" placeholder="03xx1234567" />  
-          <button class="subscribe_btn ml-2 mr-2 mt-2"><a>PLAY NOW</a></button>
+            <form (ngSubmit)="onSubmit(myForm)" #myForm="ngForm">
+          <input  name="msisdn" type="number"  pattern=".{6,}" class="login_btn ml-2 mr-2 mt-2" placeholder="03xx1234567"  />  
+          <button type="submit" class="subscribe_btn ml-2 mr-2 mt-2"><a>PLAY NOW</a></button>
+          <ng-container ><small class="error">{{errorObj.category}}</small></ng-container>
+        </form>
         </div>
       </div>
       <div class="row justify-content-center mt-1"> 
           <div class="col text-center">
-            <small >PKR 25+ tax per 3 days</small>
+            <!-- <small >PKR 25+ tax per 3 days</small> -->
             <br>
-            <small>Only pay when you want to play, no subscription</small>
+            <!-- <small>Only pay when you want to play, no subscription</small> -->
           </div>
         </div>
     

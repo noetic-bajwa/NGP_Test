@@ -15,9 +15,9 @@ export class AuthService {
   id = this.cookieService.get('id');
 
   constructor(private http: HttpClient,private cookieService:CookieService) { }
-  login(user:any){
-    let body=JSON.stringify(user);
-  let url="http://localhost:3000/login";
+  login(msisdn:any){
+    let body=JSON.stringify(msisdn);
+  let url=" https://premium.battleground.pk/login/ ";
   return this.http.post(url,body,httpOptions);
   
   }
