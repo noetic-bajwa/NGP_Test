@@ -33,7 +33,7 @@ export class SubscriptionComponent implements OnInit {
   isActive=5; 
   orderby: string;
   constructor(private pageTitle:Title,private router: Router,private route: ActivatedRoute) {
-    this.router.navigate(['/subscribe'], { queryParams: { 'partner': 'ttc', 'trackerId': '123' } });
+    // this.router.navigate(['/subscribe'], { queryParams: { 'partner': '', 'trackerId': '' } });
     
     // location.href = "sms:3444?&body=PLAY%20GAME";
     // location.href = "sms://+919999999999?body=Hello%20World!"
@@ -43,7 +43,7 @@ export class SubscriptionComponent implements OnInit {
     
    }
    
-  ngOnInit(): void {
+  ngOnInit(): void {  
     
     AOS.init();
     this.pageTitle.setTitle('Noetic Gaming Portal | Play');
@@ -55,6 +55,7 @@ export class SubscriptionComponent implements OnInit {
         console.log(params); // { orderby: "price" }
         this.partner = (params.partner)
         this.trackerId = (params.trackerId)
+        
         // this.orderby = params.orderby;
         // console.log(this.orderby); // price
       }

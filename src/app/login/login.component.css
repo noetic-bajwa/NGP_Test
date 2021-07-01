@@ -182,6 +182,7 @@ h5{
     border-radius: 25px;
     width: 190px;
     padding: 10px;
+    height: 45px;
     color: ivory;
     border : none;
     font-family: 'Mulish', sans-serif;
@@ -218,8 +219,7 @@ h5{
 
 
  a{
-  display: inline-block;
-  position: relative;
+  
   mask-image: linear-gradient(-75deg, rgba(0,0,0,.6) 30%, #000 50%, rgba(0,0,0,.6) 70%) !important;
   mask-size: 200% !important;
   animation: shine 2s linear infinite !important;

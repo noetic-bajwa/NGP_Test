@@ -52,18 +52,19 @@ export class LoginComponent implements OnInit {
   
 
   onSubmit(form:NgForm){
-    console.log(form.value)
-    alert("clicked")
-    // this.dataService.login(this.body).subscribe(
-    //   data => {
+    // console.log(form.value)
+    // alert("clicked")
+    
+    this.dataService.login(form.value).subscribe(
+      data => {
         
-    //     },
-    //     err => {
-    //       this.errorObj = err.error;
-    //       setTimeout(() => {
-    //         this.errorObj = "";
-    //       }, 3000);
-    //     } 
-    // )
+        },
+        err => {
+          this.errorObj = err.error;
+          setTimeout(() => {
+            this.errorObj = "";
+          }, 3000);
+        } 
+    )
   }
 }

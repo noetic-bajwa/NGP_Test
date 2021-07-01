@@ -16,7 +16,8 @@ const routes: Routes = [
     path:'login',component:LoginComponent
   },
   { 
-    path:'subscribe',component:SubscriptionComponent
+    path:'subscribe',
+    component:SubscriptionComponent
   },
   {
     path:'',component:DashboardComponent ,children:[
