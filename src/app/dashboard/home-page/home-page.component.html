@@ -30,23 +30,29 @@
 
     </div>
   </div>
-  <div class="row justify-content-center mt-4"> 
-    <div class="col text-center">
-      <button class="login_btn mr-2 mt-2" routerLink="login">LOGIN</button>
-      <button class="subscribe_btn mt-2" routerLink="subscribe"><a class="sub_shinner">SUBSCRIBE NOW !</a></button>
+  <ng-template [ngIf]="permission" [ngIfElse]="login">
+    <div class="col text-center mt-5">
+      <p class="marketing_lines">Let's Play</p>
     </div>
-
-  </div>
-  <div class="col text-center mt-4">
-    <p class="marketing_lines">All premium games in one place</p>
-    <p class="marketing_lines">No Advertisement</p>
-  </div>
+  </ng-template>
+  <ng-template #login>
+    <div class="row justify-content-center mt-4"> 
+      <div class="col text-center">
+        <button class="login_btn mr-2 mt-2" routerLink="login">LOGIN</button>
+        <button class="subscribe_btn mt-2" routerLink="subscribe"><a class="sub_shinner">SUBSCRIBE NOW !</a></button>
+      </div>
+  
+    </div>
+    <div class="col text-center mt-4">
+      <p class="marketing_lines">All premium games in one place</p>
+      <p class="marketing_lines">No Advertisement</p>
+    </div>
+  </ng-template>
   <div class="row justify-content-center mt-3"> 
     <div class="col text-center">
       <img (click)="scroll(target)" class="blink_me" src="assets/Home Page/drop down.png" width="30px" alt="">
     </div>
   </div>
-
 </div>
 
 <!-- New -->

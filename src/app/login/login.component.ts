@@ -5,6 +5,7 @@ import { NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
 import { trigger, transition, useAnimation } from '@angular/animations';
 import { bounceInDown } from 'ng-animate';
+import {CookieService} from 'ngx-cookie-service';
 declare let AOS: any;
 
 // import { OwlOptions } from 'ngx-owl-carousel-o';
@@ -36,11 +37,12 @@ export class LoginComponent implements OnInit {
   number = Math.floor(Math.random() * (5 - 0 + 1)) + 0;
   isActive=5; 
   name:number;
+  token:any;
   
   
   errorObj:any={};
   
-  constructor(private pageTitle:Title,private dataService:AuthService,private router: Router) { }
+  constructor(private pageTitle:Title,private dataService:AuthService,private router: Router,private cookieService:CookieService) { }
   
   ngOnInit(): void {
     AOS.init();
@@ -58,7 +60,10 @@ export class LoginComponent implements OnInit {
     this.dataService.login(form.value).subscribe(
       data => {
         console.log(data)
-        // this.router.navigate(['/studentDashboard']);  
+        this.token = data;
+        // console.log(this.token.token)
+        this.cookieService.set('token',this.token.token);
+        this.router.navigate(['']);  
         },
         err => {
           

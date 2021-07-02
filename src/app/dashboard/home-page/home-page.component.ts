@@ -30,8 +30,10 @@ export class HomePageComponent implements OnInit {
     
     if(this.permission == true){
       this.playmsg = "Let's Play";
+      
     }else{
       this.playmsg = "Login to Play";
+      
     }
   }
 

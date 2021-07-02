@@ -52,7 +52,7 @@ export class DashboardComponent implements OnInit {
   }
 
   onLogout(){
-    this.cookieService.set('jwt','');
+    this.cookieService.set('token','');
     this.router.navigateByUrl('login');
   }
 
