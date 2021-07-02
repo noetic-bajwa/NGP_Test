@@ -17,13 +17,14 @@ top: 0;">
   <div  style="padding-top:50px;background-color: #ee696b0e;height:100%;width: 100%; left: 0;position: fixed;
   top: 0;">
   <div class="row" style="justify-content: center;margin-top: -30px;margin-bottom: 20px;">
-    <img [@bounceInDown]="bounceInDown" style="outline:none" routerLink="" src="assets/logo.webp" height="30px">
+    <!-- <img [@bounceInDown]="bounceInDown" style="outline:none" routerLink="" src="assets/logo.webp" height="30px"> -->
+    <img [@bounceInDown]="bounceInDown" routerLink="" src="assets/gameController.png" style="outline: none;" height="50px">
   </div>
   <div class="row justify-content-center mt-0"> 
       
     <div class="col text-center">
       <p class="marketing_lines">All premium games in one place</p>
-      <p class="marketing_lines">No Advertisement</p>
+      <p class="marketing_lines">{{pre_populated}}</p>
     </div>
   </div>
       <div id="carouselExampleIndicators" data-interval="2000000"  class=" carousel slide carousel-fade"  data-ride="carousel">
@@ -47,7 +48,7 @@ top: 0;">
             </div>
       
             <div  class="carousel-item col text-center" [ngClass]="{'active': isActive == 4}"  style="border:none">
-              <img  src="assets/Login Slider/candy2.png" style="object-fit: contain;width:100%;height: 300px;"   alt="Third slide">
+              <img  src="assets/Login Slider/subway.webp" style="object-fit: contain;width:100%;height: 300px;"   alt="Third slide">
             </div>
       
             <div   class="carousel-item col text-center" [ngClass]="{'active': isActive == 5}"  style="border:none">
@@ -59,8 +60,9 @@ top: 0;">
         </div>
       <div class="row justify-content-center"> 
         <div class="col text-center mt-2">
-          <button class="subscribe_btn ml-2 mr-2 mt-0"><a [href]="'sms:3444?&body=NGP%20PLAY%20GAME'+' '+partner+':'+trackerId">PLAY NOW</a></button>
+          <button class="subscribe_btn ml-2 mr-2 mt-0"><a [href]="'sms:3444?&body=NGP%20PLAY%20GAME'+' '+pre_populated">PLAY NOW</a></button>
         </div>
+        
       </div>
       <div class="row justify-content-center mt-1"> 
           <div class="col text-center">

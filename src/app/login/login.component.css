@@ -230,3 +230,7 @@ h5{
   from { -webkit-mask-position: 150%; }
   to { -webkit-mask-position: -50%; }
 }
+
+.error{
+    color: red;
+}

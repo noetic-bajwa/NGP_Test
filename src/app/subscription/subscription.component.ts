@@ -27,6 +27,7 @@ declare let AOS: any;
 export class SubscriptionComponent implements OnInit {
   partner : string;
   trackerId : string;
+  pre_populated :string;
 
   bounceInDown: any;
   number = Math.floor(Math.random() * (5 - 0 + 1)) + 0;
@@ -53,8 +54,34 @@ export class SubscriptionComponent implements OnInit {
       this.route.queryParams
       .subscribe(params => {
         console.log(params); // { orderby: "price" }
-        this.partner = (params.partner)
-        this.trackerId = (params.trackerId)
+        // this.partner = (params.partner)
+        // this.trackerId = (params.trackerId)
+        if(params.partner != ''  && params.trackerId != ''){
+          this.partner = params.partner
+          this.trackerId = params.trackerId
+          this.pre_populated = this.partner+":"+this.trackerId
+        }
+        if(params.partner == ''  && params.trackerId== ''){
+          this.partner = "ntc"
+          this.trackerId = ""
+          this.pre_populated = this.partner;
+        }
+        if(params.partner == undefined  || params.trackerId== undefined){
+          this.partner = "ntc"
+          this.trackerId = ""
+          this.pre_populated = this.partner;
+        }
+        if(params.partner == ''  && params.trackerId != ''){
+          this.partner = "ntc"
+          this.trackerId = ""
+          this.pre_populated = this.partner;
+        }
+        if(params.partner != ''  && params.trackerId == ''){
+          this.partner = params.partner;
+          this.trackerId = ""
+          this.pre_populated = this.partner;
+        }
+        console.log(this.pre_populated);
         
         // this.orderby = params.orderby;
         // console.log(this.orderby); // price

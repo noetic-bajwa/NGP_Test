@@ -17,7 +17,9 @@ top: 0;">
   <div  style="padding-top:50px;background-color: #ee696b0e;height:100%;width: 100%; left: 0;position: fixed;
   top: 0;">
   <div  class="row" style="justify-content: center;margin-top: -30px;margin-bottom: 20px;">
-    <img [@bounceInDown]="bounceInDown" routerLink="" src="assets/logo.webp" style="outline: none;" height="30px">
+    <!-- <img [@bounceInDown]="bounceInDown" routerLink="" src="assets/logo.webp" style="outline: none;" height="30px"> -->
+    <img [@bounceInDown]="bounceInDown" routerLink="" src="assets/gameController.png" style="outline: none;" height="50px">
+
   </div>
   <div class="row justify-content-center mt-0"> 
       
@@ -48,7 +50,7 @@ top: 0;">
             </div>
       
             <div  class="carousel-item col text-center" [ngClass]="{'active': isActive == 4}"  style="border:none">
-              <img  src="assets/Login Slider/candy2.png" style="object-fit: contain;width:100%;height: 300px;"   alt="Third slide">
+              <img  src="assets/Login Slider/subway.webp" style="object-fit: contain;width:100%;height: 300px;"   alt="Third slide">
             </div>
       
             <div   class="carousel-item col text-center" [ngClass]="{'active': isActive == 5}"  style="border:none">
@@ -61,9 +63,9 @@ top: 0;">
       <div class="row justify-content-center"> 
         <div class="col text-center">
             <form (ngSubmit)="onSubmit(myForm)" class="mt-3" #myForm="ngForm">
-          <input  name="msisdn" type="number"  pattern=".{6,}" class="login_btn ml-4 mr-4 mt-3" placeholder="03xx1234567"  />  
+          <input  name="msisdn" type="number"   class="login_btn ml-4 mr-4 mt-3" placeholder="03xx1234567"  ngModel/>  
           <button type="submit" class="subscribe_btn ml-4 mr-4 mt-3"><a>PLAY NOW</a></button>
-          <ng-container ><small class="error">{{errorObj.category}}</small></ng-container>
+          <ng-container ><small  class="error mt-4"><br>{{errorObj.error}}</small></ng-container>
         </form>
         </div>
       </div>

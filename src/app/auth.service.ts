@@ -16,20 +16,21 @@ export class AuthService {
 
   constructor(private http: HttpClient,private cookieService:CookieService) { }
   login(msisdn:any){
-    let body=JSON.stringify(msisdn);
+  // let body=JSON.stringify(msisdn);
+  // console.log(msisdn);
   let url=" https://premium.battleground.pk/login/ ";
-  return this.http.post(url,body,httpOptions);
+  return this.http.post(url,msisdn);
   
   }
 
   logout(){
   // let url="http://localhost:3000/logout";
   // return this.http.get(url,httpOptions);
-  this.cookieService.set('jwt','');
+  this.cookieService.set('token','');
   }
   
   loggedIn(){
-    return(this.cookieService.get('jwt')=='Pakistan');  
+    return(this.cookieService.get('token'));   
     
   }
 }
