@@ -27,7 +27,8 @@ declare let AOS: any;
 export class SubscriptionComponent implements OnInit {
   partner : string;
   trackerId : string;
-  pre_populated :string;
+  subKeyword :string;
+  shortCode : string;
 
   bounceInDown: any;
   number = Math.floor(Math.random() * (5 - 0 + 1)) + 0;
@@ -59,29 +60,41 @@ export class SubscriptionComponent implements OnInit {
         if(params.partner != ''  && params.trackerId != ''){
           this.partner = params.partner
           this.trackerId = params.trackerId
-          this.pre_populated = this.partner+" "+this.trackerId
+          this.subKeyword = this.partner+" "+this.trackerId
         }
         if(params.partner == ''  && params.trackerId== ''){
           this.partner = "ntl"
           this.trackerId = ""
-          this.pre_populated = this.partner;
+          this.subKeyword = this.partner;
         }
         if(params.partner == undefined  || params.trackerId== undefined){
           this.partner = "ntl"
           this.trackerId = ""
-          this.pre_populated = this.partner;
+          this.subKeyword = this.partner;
         }
         if(params.partner == ''  && params.trackerId != ''){
           this.partner = "ntc"
           this.trackerId = ""
-          this.pre_populated = this.partner;
+          this.subKeyword = this.partner;
         }
         if(params.partner != ''  && params.trackerId == ''){
           this.partner = params.partner;
           this.trackerId = ""
-          this.pre_populated = this.partner;
+          this.subKeyword = this.partner;
         }
-        console.log(this.pre_populated);
+        if(params.se != undefined){
+          this.shortCode = '3444'
+        }
+        if(params.se == ''){
+          this.shortCode = '3444'
+        }
+        if(params.se == '1'){
+          this.shortCode = '3444'
+        }
+        if(params.se == '2'){
+          this.shortCode = '3445'
+        }
+        console.log(this.subKeyword);
         
         // this.orderby = params.orderby;
         // console.log(this.orderby); // price
