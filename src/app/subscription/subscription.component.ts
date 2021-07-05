@@ -82,7 +82,7 @@ export class SubscriptionComponent implements OnInit {
           this.trackerId = ""
           this.subKeyword = this.partner;
         }
-        if(params.se != undefined){
+        if(params.se == undefined){
           this.shortCode = '3444'
         }
         if(params.se == ''){
