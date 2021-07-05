@@ -45,7 +45,7 @@
       <div class="row justify-content-center"> 
         <div class="col text-center">
             <form (ngSubmit)="onSubmit(myForm)" class="mt-3" #myForm="ngForm">
-          <input maxlength="11" name="msisdn" type="number"  class="login_btn ml-5 mr-5 mt-3" placeholder="03xx1234567"  [(ngModel)]="msisdn"/>  
+          <input maxlength="11" name="msisdn" type="text" inputmode="numeric"  class="login_btn ml-5 mr-5 mt-3" placeholder="03xx1234567"  [(ngModel)]="msisdn"/>  
           <button type="submit" class="subscribe_btn ml-5 mr-5 mt-3"><a>PLAY NOW</a></button>
           <ng-container ><small  class="error mt-4"><br>{{errorObj.error}}</small></ng-container>
         </form>

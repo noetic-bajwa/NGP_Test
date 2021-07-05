@@ -63,8 +63,8 @@ export class LoginComponent implements OnInit {
 
   onSubmit(form:NgForm){
     
-    form.value.msisdn = form.value.msisdn.toString();
-    form.value.msisdn = form.value.msisdn.padStart(11, '0'); 
+    // form.value.msisdn = form.value.msisdn.toString();
+    // form.value.msisdn = form.value.msisdn.padStart(11, '0'); 
     console.log(form.value)
     this.dataService.login(form.value).subscribe(
       data => {
