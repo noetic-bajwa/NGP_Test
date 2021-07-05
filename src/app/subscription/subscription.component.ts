@@ -30,9 +30,8 @@ export class SubscriptionComponent implements OnInit {
   pre_populated :string;
 
   bounceInDown: any;
-  number = Math.floor(Math.random() * (5 - 0 + 1)) + 0;
-  isActive=5; 
-  orderby: string;
+  
+  
   constructor(private pageTitle:Title,private router: Router,private route: ActivatedRoute) {
     // this.router.navigate(['/subscribe'], { queryParams: { 'partner': '', 'trackerId': '' } });
     
