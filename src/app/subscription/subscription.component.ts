@@ -67,7 +67,9 @@ export class SubscriptionComponent implements OnInit {
           this.trackerId = params.trackerId
           this.subKeyword = this.partner+" "+this.trackerId
         }else{
-          this.subKeyword = "ntl"        }
+          this.subKeyword = "ntl"}
+
+        
         if(params.partner == ''  && params.trackerId== ''){
           this.partner = "ntl"
           this.trackerId = ""
@@ -84,6 +86,11 @@ export class SubscriptionComponent implements OnInit {
           this.subKeyword = this.partner;
         }
         if(params.partner == 'ttc'  && params.trackerId == ''){
+          this.partner = params.partner;
+          this.trackerId = ""
+          this.subKeyword = this.partner;
+        }
+        if(params.partner == 'ttc'  && params.trackerId == undefined){
           this.partner = params.partner;
           this.trackerId = ""
           this.subKeyword = this.partner;
