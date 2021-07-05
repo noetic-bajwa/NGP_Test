@@ -59,7 +59,7 @@ export class SubscriptionComponent implements OnInit {
         if(params.partner != ''  && params.trackerId != ''){
           this.partner = params.partner
           this.trackerId = params.trackerId
-          this.pre_populated = this.partner+":"+this.trackerId
+          this.pre_populated = this.partner+" "+this.trackerId
         }
         if(params.partner == ''  && params.trackerId== ''){
           this.partner = "ntl"
