@@ -57,11 +57,17 @@ export class SubscriptionComponent implements OnInit {
         console.log(params); // { orderby: "price" }
         // this.partner = (params.partner)
         // this.trackerId = (params.trackerId)
-        if(params.partner != ''  && params.trackerId != ''){
+        if(params.partner != 'ttc' ){
+          this.partner = 'ntl'
+          
+        }
+
+        if(params.partner == 'ttc'   && params.trackerId != ''){
           this.partner = params.partner
           this.trackerId = params.trackerId
           this.subKeyword = this.partner+" "+this.trackerId
-        }
+        }else{
+          this.subKeyword = "ntl"        }
         if(params.partner == ''  && params.trackerId== ''){
           this.partner = "ntl"
           this.trackerId = ""
@@ -73,27 +79,28 @@ export class SubscriptionComponent implements OnInit {
           this.subKeyword = this.partner;
         }
         if(params.partner == ''  && params.trackerId != ''){
-          this.partner = "ntc"
+          this.partner = "ntl"
           this.trackerId = ""
           this.subKeyword = this.partner;
         }
-        if(params.partner != ''  && params.trackerId == ''){
+        if(params.partner == 'ttc'  && params.trackerId == ''){
           this.partner = params.partner;
           this.trackerId = ""
           this.subKeyword = this.partner;
         }
-        if(params.se == undefined){
+        if(params.sc == undefined){
           this.shortCode = '3444'
         }
-        if(params.se == ''){
+        if(params.sc == ''){
           this.shortCode = '3444'
         }
-        if(params.se == '1'){
+        if(params.sc == '1'){
           this.shortCode = '3444'
         }
-        if(params.se == '2'){
+        if(params.sc == '2'){
           this.shortCode = '3445'
         }
+        
         console.log(this.subKeyword);
         
         // this.orderby = params.orderby;
