@@ -6,6 +6,7 @@ import { Router } from '@angular/router';
 import { trigger, transition, useAnimation } from '@angular/animations';
 import { bounceInDown } from 'ng-animate';
 import {CookieService} from 'ngx-cookie-service';
+import { ActivatedRoute } from '@angular/router';
 declare let AOS: any;
 
 // import { OwlOptions } from 'ngx-owl-carousel-o';
@@ -42,12 +43,20 @@ export class LoginComponent implements OnInit {
   
   errorObj:any={};
   
-  constructor(private pageTitle:Title,private dataService:AuthService,private router: Router,private cookieService:CookieService) { }
+  constructor(private pageTitle:Title,private dataService:AuthService,private router: Router,private cookieService:CookieService,private route: ActivatedRoute) { }
   
+  msisdn:string;
   ngOnInit(): void {
     AOS.init();
-    this.pageTitle.setTitle('Noetic Gaming Portal | Login');
+    this.route.queryParams
+      .subscribe(params => {
+
+        this.msisdn = (params.msisdn)
+        console.log(this.msisdn);
+        
+      });
     
+  
   }
   
   

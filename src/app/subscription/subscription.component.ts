@@ -47,7 +47,7 @@ export class SubscriptionComponent implements OnInit {
   ngOnInit(): void {  
     
     AOS.init();
-    this.pageTitle.setTitle('Noetic Gaming Portal | Play');
+    this.pageTitle.setTitle('Gamingo | Play');
     // setTimeout(()=>{
       
       
@@ -62,12 +62,12 @@ export class SubscriptionComponent implements OnInit {
           this.pre_populated = this.partner+":"+this.trackerId
         }
         if(params.partner == ''  && params.trackerId== ''){
-          this.partner = "ntc"
+          this.partner = "ntl"
           this.trackerId = ""
           this.pre_populated = this.partner;
         }
         if(params.partner == undefined  || params.trackerId== undefined){
-          this.partner = "ntc"
+          this.partner = "ntl"
           this.trackerId = ""
           this.pre_populated = this.partner;
         }

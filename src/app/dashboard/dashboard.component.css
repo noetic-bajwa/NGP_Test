@@ -12,11 +12,13 @@
   }
 
   #brand{
-    font-family: 'Mulish', sans-serif;
-    font-size: 32px;
+    font-family: 'Gloria Hallelujah', cursive;
+    font-size: 30px;
     color:#ffffff;
     font-weight: medium;
   }
+
+  
 
   p{
     font-family: 'Mulish', sans-serif;
@@ -29,15 +31,15 @@
 /* Media Queries for NavBar */
 
 @media only screen and (max-width: 500px) {
-  #brand{
+  /* #brand{
     font-size: 28px;
-  }
+  } */
 }
 
 @media only screen and (max-width: 450px) {
-  #brand{
+  /* #brand{
     font-size: 25px;
-  }
+  } */
   .navbar-toggler{
     font-size: 1.1rem !important;
     padding: .20rem .55rem !important;

@@ -36,7 +36,7 @@ export class GameComponent implements OnInit {
   
   ngOnInit(): void {
     // console.log(this.Games);
-    this.pageTitle.setTitle('Noetic Gaming Portal | '+this.id);
+    this.pageTitle.setTitle('Gamingo | '+this.title);
     // this.title = this.DataService.title;
     this.urlSafe= this.sanitizer.bypassSecurityTrustResourceUrl(this.src);
     this.cookieService.set('id',this.id);
@@ -56,6 +56,7 @@ export class GameComponent implements OnInit {
   onClick(){
     if(this.permission == false){
       alert('Please Login')
+      this.router.navigateByUrl('login');
     }
   }
   
