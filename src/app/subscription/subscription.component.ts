@@ -60,7 +60,7 @@ export class SubscriptionComponent implements OnInit {
         console.log(params); // { orderby: "price" }
         // this.partner = (params.partner)
         // this.trackerId = (params.trackerId)
-        if(params.partner != 'pm' || params.partner == 'tct'  ){
+        if(params.partner != 'pm' || params.partner != 'tct'  ){
           this.partner = 'ntl'
           
         }
