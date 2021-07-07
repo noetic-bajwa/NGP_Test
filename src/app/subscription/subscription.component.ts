@@ -29,6 +29,9 @@ export class SubscriptionComponent implements OnInit {
   trackerId : string;
   subKeyword :string;
   shortCode : string;
+  message : string;
+  message1 :string ="PKR 10+ tax per day"; 
+  message2 :string ="PKR 25+ tax per 3 days"; 
 
   bounceInDown: any;
   number = Math.floor(Math.random() * (5 - 0 + 1)) + 0;
@@ -57,12 +60,12 @@ export class SubscriptionComponent implements OnInit {
         console.log(params); // { orderby: "price" }
         // this.partner = (params.partner)
         // this.trackerId = (params.trackerId)
-        if(params.partner != 'ttc' ){
+        if(params.partner != 'pm' ){
           this.partner = 'ntl'
           
         }
 
-        if(params.partner == 'ttc'   && params.trackerId != ''){
+        if(params.partner == 'pm'   && params.trackerId != ''){
           this.partner = params.partner
           this.trackerId = params.trackerId
           this.subKeyword = this.partner+" "+this.trackerId
@@ -85,27 +88,31 @@ export class SubscriptionComponent implements OnInit {
           this.trackerId = ""
           this.subKeyword = this.partner;
         }
-        if(params.partner == 'ttc'  && params.trackerId == ''){
+        if(params.partner == 'pm'  && params.trackerId == ''){
           this.partner = params.partner;
           this.trackerId = ""
           this.subKeyword = this.partner;
         }
-        if(params.partner == 'ttc'  && params.trackerId == undefined){
+        if(params.partner == 'pm'  && params.trackerId == undefined){
           this.partner = params.partner;
           this.trackerId = ""
           this.subKeyword = this.partner;
         }
         if(params.sc == undefined){
-          this.shortCode = '3444'
+          this.shortCode = '3444';
+          this.message = this.message1;
         }
         if(params.sc == ''){
-          this.shortCode = '3444'
+          this.shortCode = '3444';
+          this.message = this.message1;
         }
         if(params.sc == '1'){
-          this.shortCode = '3444'
+          this.shortCode = '3444';
+          this.message = this.message1;
         }
         if(params.sc == '2'){
-          this.shortCode = '3445'
+          this.shortCode = '3445';
+          this.message = this.message2;
         }
         
         console.log(this.subKeyword);
