@@ -60,12 +60,12 @@ export class SubscriptionComponent implements OnInit {
         console.log(params); // { orderby: "price" }
         // this.partner = (params.partner)
         // this.trackerId = (params.trackerId)
-        if(params.partner != 'pm' ){
+        if(params.partner != 'pm' || params.partner != 'tct'  ){
           this.partner = 'ntl'
           
         }
 
-        if(params.partner == 'pm'   && params.trackerId != ''){
+        if(params.partner == 'pm' || params.partner != 'tct'    && params.trackerId != ''){
           this.partner = params.partner
           this.trackerId = params.trackerId
           this.subKeyword = this.partner+" "+this.trackerId
@@ -88,12 +88,12 @@ export class SubscriptionComponent implements OnInit {
           this.trackerId = ""
           this.subKeyword = this.partner;
         }
-        if(params.partner == 'pm'  && params.trackerId == ''){
+        if(params.partner == 'pm' || params.partner != 'tct'  && params.trackerId == ''){
           this.partner = params.partner;
           this.trackerId = ""
           this.subKeyword = this.partner;
         }
-        if(params.partner == 'pm'  && params.trackerId == undefined){
+        if(params.partner == 'pm' || params.partner != 'tct'   && params.trackerId == undefined){
           this.partner = params.partner;
           this.trackerId = ""
           this.subKeyword = this.partner;
