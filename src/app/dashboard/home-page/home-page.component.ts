@@ -25,7 +25,7 @@ export class HomePageComponent implements OnInit {
   }
   permission = this.authService.canActivate();
   ngOnInit(): void {
-    console.log(this.number);
+    // console.log(this.number);
     AOS.init();
     
     if(this.permission == true){

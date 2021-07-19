@@ -52,7 +52,7 @@ export class LoginComponent implements OnInit {
       .subscribe(params => {
 
         this.msisdn = (params.msisdn)
-        console.log(this.msisdn);
+        // console.log(this.msisdn);
         
       });
     
@@ -65,10 +65,10 @@ export class LoginComponent implements OnInit {
     
     // form.value.msisdn = form.value.msisdn.toString();
     // form.value.msisdn = form.value.msisdn.padStart(11, '0'); 
-    console.log(form.value)
+    // console.log(form.value)
     this.dataService.login(form.value).subscribe(
       data => {
-        console.log(data)
+        // console.log(data)
         this.token = data;
         // console.log(this.token.token)
         this.cookieService.set('token',this.token.token);

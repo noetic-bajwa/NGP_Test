@@ -57,15 +57,15 @@ export class SubscriptionComponent implements OnInit {
       
       this.route.queryParams
       .subscribe(params => {
-        console.log(params); // { orderby: "price" }
+        // console.log(params); // { orderby: "price" }
         // this.partner = (params.partner)
         // this.trackerId = (params.trackerId)
-        if(params.partner != 'pm' || params.partner != 'tct'  ){
+        if(params.partner != 'pm' || params.partner == 'tct'  ){
           this.partner = 'ntl'
           
         }
 
-        if(params.partner == 'pm' || params.partner == 'tct'    && params.trackerId != ''){
+        if(params.partner == 'pm' || params.partner == 'tct'   && params.trackerId != ''){
           this.partner = params.partner
           this.trackerId = params.trackerId
           this.subKeyword = this.partner+" "+this.trackerId
@@ -88,7 +88,7 @@ export class SubscriptionComponent implements OnInit {
           this.trackerId = ""
           this.subKeyword = this.partner;
         }
-        if(params.partner == 'pm' || params.partner == 'tct'  && params.trackerId == ''){
+        if(params.partner == 'pm' || params.partner == 'tct'   && params.trackerId == ''){
           this.partner = params.partner;
           this.trackerId = ""
           this.subKeyword = this.partner;
@@ -115,7 +115,7 @@ export class SubscriptionComponent implements OnInit {
           this.message = this.message2;
         }
         
-        console.log(this.subKeyword);
+        // console.log(this.subKeyword);
         
         // this.orderby = params.orderby;
         // console.log(this.orderby); // price

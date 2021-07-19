@@ -234,3 +234,8 @@ h5{
 .error{
     color: red;
 }
+.marketing_lines{
+    letter-spacing: 0.15rem;
+    color: #660F56;
+    line-height: 0.55rem;
+}
