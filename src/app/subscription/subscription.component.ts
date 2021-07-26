@@ -52,7 +52,7 @@ export class SubscriptionComponent implements OnInit {
     
     AOS.init();
     this.pageTitle.setTitle('Gamingo | Play');
-    // setTimeout(()=>{
+    setTimeout(()=>{
       
       
       this.route.queryParams
@@ -122,8 +122,9 @@ export class SubscriptionComponent implements OnInit {
       }
     );     
       
-      
-    // }, 3000);
+    location.href = "sms:"+this.shortCode+"?&body=Ngp "+this.subKeyword;
+  }, 5000);
+    }, 3000);
   }
   
 }
