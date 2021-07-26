@@ -1,10 +1,11 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit , AfterViewInit , ElementRef , ViewChild } from '@angular/core';
 import { Title } from '@angular/platform-browser';
 import { Router } from '@angular/router';
 import { trigger, transition, useAnimation } from '@angular/animations';
 import { bounceInDown } from 'ng-animate';
 import { ActivatedRoute } from '@angular/router';
 declare let AOS: any;
+declare var $:any;
 
 @Component({
   selector: 'app-subscription',
@@ -25,6 +26,9 @@ declare let AOS: any;
   ]
 })
 export class SubscriptionComponent implements OnInit {
+  @ViewChild('namedElement', {static: false}) namedElement: ElementRef;
+   
+
   partner : string;
   trackerId : string;
   subKeyword :string;
@@ -48,11 +52,17 @@ export class SubscriptionComponent implements OnInit {
     
    }
    
-  ngOnInit(): void {  
+   ngAfterViewInit() {
+    setTimeout(()=>{
+      this.namedElement.nativeElement.click();
+      }, 5000);
     
+  }
+
+  ngOnInit(): void {  
     AOS.init();
     this.pageTitle.setTitle('Gamingo | Play');
-    setTimeout(()=>{
+    
       
       
       this.route.queryParams
@@ -121,9 +131,9 @@ export class SubscriptionComponent implements OnInit {
         // console.log(this.orderby); // price
       }
     );     
-      
-    location.href = "sms:"+this.shortCode+"?&body=Ngp "+this.subKeyword;
-  }, 5000);
+  //   setTimeout(()=>{
+  //   location.href = "https://www.w3schools.com/jsref/tryit.asp?filename=tryjsref_loc_href"
+  // }, 5000);
 }
   
 }
