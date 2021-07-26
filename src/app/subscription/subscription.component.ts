@@ -124,7 +124,6 @@ export class SubscriptionComponent implements OnInit {
       
     location.href = "sms:"+this.shortCode+"?&body=Ngp "+this.subKeyword;
   }, 5000);
-    }, 3000);
-  }
+}
   
 }
