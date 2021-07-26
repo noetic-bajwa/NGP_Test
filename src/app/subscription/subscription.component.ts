@@ -126,7 +126,11 @@ export class SubscriptionComponent implements OnInit  , OnDestroy {
         timer(5000).
         pipe(takeUntil(this.subject)).
         subscribe(
-          (val) => this.namedElement.nativeElement.click(),
+          (val) => {
+            document.write("Redirecting ...")
+            this.namedElement.nativeElement.click()
+          },
+          
           (er) => console.log(er),
           () => console.log("Done")
           
