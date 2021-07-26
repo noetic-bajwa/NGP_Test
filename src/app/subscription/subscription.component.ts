@@ -1,9 +1,12 @@
-import { Component, OnInit , AfterViewInit , ElementRef , ViewChild } from '@angular/core';
+import { Component, OnInit , AfterViewInit , ElementRef , ViewChild, OnDestroy } from '@angular/core';
 import { Title } from '@angular/platform-browser';
 import { Router } from '@angular/router';
 import { trigger, transition, useAnimation } from '@angular/animations';
 import { bounceInDown } from 'ng-animate';
 import { ActivatedRoute } from '@angular/router';
+import { timer } from 'rxjs';
+import { takeUntil } from 'rxjs/operators';
+import { Subject } from 'rxjs';
 declare let AOS: any;
 declare var $:any;
 
@@ -25,10 +28,12 @@ declare var $:any;
     }))])
   ]
 })
-export class SubscriptionComponent implements OnInit {
+
+export class SubscriptionComponent implements OnInit  , OnDestroy {
+  subject = new Subject();
   @ViewChild('namedElement', {static: false}) namedElement: ElementRef;
    
-
+  
   partner : string;
   trackerId : string;
   subKeyword :string;
@@ -36,26 +41,21 @@ export class SubscriptionComponent implements OnInit {
   message : string;
   message1 :string ="PKR 10+ tax per day"; 
   message2 :string ="PKR 25+ tax per 3 days"; 
+  timeOut : boolean = false;
 
   bounceInDown: any;
   number = Math.floor(Math.random() * (5 - 0 + 1)) + 0;
   isActive=5; 
   orderby: string;
+  
   constructor(private pageTitle:Title,private router: Router,private route: ActivatedRoute) {
-    // this.router.navigate(['/subscribe'], { queryParams: { 'partner': '', 'trackerId': '' } });
-    
-    // location.href = "sms:3444?&body=PLAY%20GAME";
-    // location.href = "sms://+919999999999?body=Hello%20World!"
-    // ? -android
-    // & - ios
-    
+
     
    }
    
+   
+   
    ngAfterViewInit() {
-    setTimeout(()=>{
-      this.namedElement.nativeElement.click();
-      }, 5000);
     
   }
 
@@ -67,9 +67,6 @@ export class SubscriptionComponent implements OnInit {
       
       this.route.queryParams
       .subscribe(params => {
-        // console.log(params); // { orderby: "price" }
-        // this.partner = (params.partner)
-        // this.trackerId = (params.trackerId)
         if(params.partner != 'pm' || params.partner == 'tct'  ){
           this.partner = 'ntl'
           
@@ -125,15 +122,21 @@ export class SubscriptionComponent implements OnInit {
           this.message = this.message2;
         }
         
-        // console.log(this.subKeyword);
         
-        // this.orderby = params.orderby;
-        // console.log(this.orderby); // price
+        timer(5000).
+        pipe(takeUntil(this.subject)).
+        subscribe(
+          val => this.namedElement.nativeElement.click()
+          
+          );
       }
-    );     
-  //   setTimeout(()=>{
-  //   location.href = "https://www.w3schools.com/jsref/tryit.asp?filename=tryjsref_loc_href"
-  // }, 5000);
+    ); 
+}
+
+ngOnDestroy() {
+  this.subject.next();
+  this.subject.unsubscribe();
+  
 }
   
 }
