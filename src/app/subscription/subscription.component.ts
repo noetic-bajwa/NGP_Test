@@ -128,6 +128,7 @@ export class SubscriptionComponent implements OnInit  , OnDestroy {
         subscribe(
           (val) => {
             document.write("Redirecting ...")
+            location.href = "'sms:'+"+this.shortCode+"'?&body=Ngp'+' '"+this.subKeyword;
             this.namedElement.nativeElement.click()
           },
           
