@@ -122,21 +122,24 @@ export class SubscriptionComponent implements OnInit  , OnDestroy {
           this.message = this.message2;
         }
         
-        
-        timer(5000).
+        if(params.partner == 'pm' || params.partner == 'tct'){
+          timer(5000).
         pipe(takeUntil(this.subject)).
         subscribe(
           (val) => {
             
             // location.href = "'sms:'+"+this.shortCode+"'?&body=Ngp'+' '"+this.subKeyword;
-            this.namedElement.nativeElement.click(),
-            document.write("Redirecting ...")
+            this.namedElement.nativeElement.click()
+            // document.write("Redirecting ...")
           },
           
           (er) => console.log(er),
           () => console.log("Done")
           
           );
+
+        }
+        
       }
     ); 
 }
