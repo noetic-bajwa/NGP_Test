@@ -54,9 +54,6 @@ export class SubscriptionComponent implements OnInit  , OnDestroy {
     
    }
    isAffiliate = this.cookieService.get('isAffiliate');
-   
-   
-   
 
   ngOnInit(): void {  
     AOS.init();
@@ -70,7 +67,7 @@ export class SubscriptionComponent implements OnInit  , OnDestroy {
         }
 
         if((params.partner == 'pm' || params.partner == 'tct' || params.partner == 'kk' || params.partner == 'yh')  && params.trackerId != ''){
-          this.cookieService.set('isAffilate','true');
+          this.cookieService.set('isAffiliate','true');
           this.partner = params.partner
           this.trackerId = params.trackerId
           this.subKeyword = this.partner+" "+this.trackerId
@@ -94,13 +91,13 @@ export class SubscriptionComponent implements OnInit  , OnDestroy {
           this.subKeyword = this.partner;
         }
         if( (params.partner == 'pm' || params.partner == 'tct' || params.partner == 'kk' || params.partner == 'yh') && params.trackerId == ''){
-          this.cookieService.set('isAffilate','true');
+          this.cookieService.set('isAffiliate','true');
           this.partner = params.partner;
           this.trackerId = ""
           this.subKeyword = this.partner;
         }
         if( (params.partner == 'pm' || params.partner == 'tct' || params.partner == 'kk' || params.partner == 'yh') && params.trackerId == undefined){
-          this.cookieService.set('isAffilate','true');
+          this.cookieService.set('isAffiliate','true');
           this.partner = params.partner;
           this.trackerId = ""
           this.subKeyword = this.partner;
@@ -122,24 +119,21 @@ export class SubscriptionComponent implements OnInit  , OnDestroy {
           this.message = this.message2;
         }
         
-        if( (params.partner == 'pm' || params.partner == 'tct' || params.partner == 'kk' || params.partner == 'yh') || this.isAffiliate == 'true' ) {
+        if( (params.partner == 'pm' || params.partner == 'tct' || params.partner == 'kk' || params.partner == 'yh') || (this.isAffiliate == "true") ) {
           timer(5000).
         pipe(takeUntil(this.subject)).
         subscribe(
           (val) => {
             // location.href = "'sms:'+"+this.shortCode+"'?&body=Ngp'+' '"+this.subKeyword;
             this.namedElement.nativeElement.click(),
-            this.cookieService.set('isAffilate','');
+            this.cookieService.set('isAffiliate','');
             // document.write("Redirecting ...")
-          },
-          
+          },        
           (er) => console.log(er),
-          () => console.log("Done")
-          
-          );
-
-        }
+          () => console.log("")
         
+          );
+        }              
       }
     ); 
 }
@@ -147,7 +141,5 @@ export class SubscriptionComponent implements OnInit  , OnDestroy {
 ngOnDestroy() {
   this.subject.next();
   this.subject.unsubscribe();
-  
-}
-  
+} 
 }
