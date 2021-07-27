@@ -72,7 +72,7 @@ export class SubscriptionComponent implements OnInit  , OnDestroy {
           
         }
 
-        if(params.partner == ('pm' || 'tct')  && params.trackerId != ''){
+        if(params.partner == 'pm' || params.partner == 'tct'   && params.trackerId != ''){
           this.partner = params.partner
           this.trackerId = params.trackerId
           this.subKeyword = this.partner+" "+this.trackerId
@@ -95,12 +95,12 @@ export class SubscriptionComponent implements OnInit  , OnDestroy {
           this.trackerId = ""
           this.subKeyword = this.partner;
         }
-        if(params.partner == 'pm' || 'tct'   && params.trackerId == ''){
+        if( (params.partner == 'pm' || params.partner == 'tct' )  && params.trackerId == ''){
           this.partner = params.partner;
           this.trackerId = ""
           this.subKeyword = this.partner;
         }
-        if(params.partner == 'pm' || 'tct'   && params.trackerId == undefined){
+        if( (params.partner == 'pm' || params.partner == 'tct')   && params.trackerId == undefined){
           this.partner = params.partner;
           this.trackerId = ""
           this.subKeyword = this.partner;
@@ -142,6 +142,9 @@ export class SubscriptionComponent implements OnInit  , OnDestroy {
         
       }
     ); 
+
+
+    
 }
 
 ngOnDestroy() {
