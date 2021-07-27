@@ -4,6 +4,7 @@ import { Router } from '@angular/router';
 import { trigger, transition, useAnimation } from '@angular/animations';
 import { bounceInDown } from 'ng-animate';
 import { ActivatedRoute } from '@angular/router';
+import {CookieService} from 'ngx-cookie-service';
 import { timer } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
 import { Subject } from 'rxjs';
@@ -41,23 +42,21 @@ export class SubscriptionComponent implements OnInit  , OnDestroy {
   message : string;
   message1 :string ="PKR 10+ tax per day"; 
   message2 :string ="PKR 25+ tax per 3 days"; 
-  timeOut : boolean = false;
+  
 
   bounceInDown: any;
   number = Math.floor(Math.random() * (5 - 0 + 1)) + 0;
   isActive=5; 
   orderby: string;
   
-  constructor(private pageTitle:Title,private router: Router,private route: ActivatedRoute) {
-
+  constructor(private pageTitle:Title,private router: Router,private route: ActivatedRoute, private cookieService:CookieService) {
+    
     
    }
+   isAffiliate = this.cookieService.get('isAffiliate');
    
    
    
-   ngAfterViewInit() {
-    
-  }
 
   ngOnInit(): void {  
     AOS.init();
@@ -71,6 +70,7 @@ export class SubscriptionComponent implements OnInit  , OnDestroy {
         }
 
         if((params.partner == 'pm' || params.partner == 'tct' || params.partner == 'kk' || params.partner == 'yh')  && params.trackerId != ''){
+          this.cookieService.set('isAffilate','true');
           this.partner = params.partner
           this.trackerId = params.trackerId
           this.subKeyword = this.partner+" "+this.trackerId
@@ -94,11 +94,13 @@ export class SubscriptionComponent implements OnInit  , OnDestroy {
           this.subKeyword = this.partner;
         }
         if( (params.partner == 'pm' || params.partner == 'tct' || params.partner == 'kk' || params.partner == 'yh') && params.trackerId == ''){
+          this.cookieService.set('isAffilate','true');
           this.partner = params.partner;
           this.trackerId = ""
           this.subKeyword = this.partner;
         }
         if( (params.partner == 'pm' || params.partner == 'tct' || params.partner == 'kk' || params.partner == 'yh') && params.trackerId == undefined){
+          this.cookieService.set('isAffilate','true');
           this.partner = params.partner;
           this.trackerId = ""
           this.subKeyword = this.partner;
@@ -120,14 +122,14 @@ export class SubscriptionComponent implements OnInit  , OnDestroy {
           this.message = this.message2;
         }
         
-        if(params.partner == 'pm' || params.partner == 'tct' || params.partner == 'kk' || params.partner == 'yh'){
+        if( (params.partner == 'pm' || params.partner == 'tct' || params.partner == 'kk' || params.partner == 'yh') || this.isAffiliate == 'true' ) {
           timer(5000).
         pipe(takeUntil(this.subject)).
         subscribe(
           (val) => {
-            
             // location.href = "'sms:'+"+this.shortCode+"'?&body=Ngp'+' '"+this.subKeyword;
-            this.namedElement.nativeElement.click()
+            this.namedElement.nativeElement.click(),
+            this.cookieService.set('isAffilate','');
             // document.write("Redirecting ...")
           },
           
@@ -140,7 +142,6 @@ export class SubscriptionComponent implements OnInit  , OnDestroy {
         
       }
     ); 
-
 }
 
 ngOnDestroy() {
