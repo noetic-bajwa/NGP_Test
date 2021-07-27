@@ -63,8 +63,6 @@ export class SubscriptionComponent implements OnInit  , OnDestroy {
     AOS.init();
     this.pageTitle.setTitle('Gamingo | Play');
     
-      
-      
       this.route.queryParams
       .subscribe(params => {
         if(params.partner != 'pm' || params.partner == 'tct'  ){
@@ -72,7 +70,7 @@ export class SubscriptionComponent implements OnInit  , OnDestroy {
           
         }
 
-        if(params.partner == 'pm' || params.partner == 'tct'   && params.trackerId != ''){
+        if((params.partner == 'pm' || params.partner == 'tct' || params.partner == 'kk' || params.partner == 'yh')  && params.trackerId != ''){
           this.partner = params.partner
           this.trackerId = params.trackerId
           this.subKeyword = this.partner+" "+this.trackerId
