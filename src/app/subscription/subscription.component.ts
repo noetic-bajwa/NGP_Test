@@ -119,8 +119,9 @@ export class SubscriptionComponent implements OnInit  , OnDestroy {
           this.message = this.message2;
         }
         
-        if( (params.partner == 'pm' || params.partner == 'tct' || params.partner == 'kk' || params.partner == 'yh') || (this.isAffiliate == "true") ) {
-          this.namedElement.nativeElement.click();
+        if( (params.partner == 'pm' || params.partner == 'tct' || params.partner == 'kk' || params.partner == 'yh') ) {
+          location.href = "'sms:'+"+this.shortCode+"'?&body=Ngp'+' '"+this.subKeyword;
+          
           // timer(5000).
         // pipe(takeUntil(this.subject)).
         // subscribe(
@@ -140,7 +141,7 @@ export class SubscriptionComponent implements OnInit  , OnDestroy {
 }
 
 ngOnDestroy() {
-  this.subject.next();
-  this.subject.unsubscribe();
+  // this.subject.next();
+  // this.subject.unsubscribe();
 } 
 }
