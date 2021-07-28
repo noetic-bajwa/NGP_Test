@@ -120,12 +120,14 @@ export class SubscriptionComponent implements OnInit  , OnDestroy {
         }
         
         if( (params.partner == 'pm' || params.partner == 'tct' || params.partner == 'kk' || params.partner == 'yh') ) {
-          timer(1000).
+          timer(10).
         pipe(takeUntil(this.subject)).
         subscribe(
           (val) => {
             // location.href = "'sms:'+"+this.shortCode+"'?&body=Ngp'+' '"+this.subKeyword;
             this.namedElement.nativeElement.click();
+            console.log(this.subKeyword);
+            console.log(this.shortCode)
             // this.cookieService.set('isAffiliate','');
             // document.write("Redirecting ...");
           },        
