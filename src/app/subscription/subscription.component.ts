@@ -119,7 +119,7 @@ export class SubscriptionComponent implements OnInit  , OnDestroy {
           this.message = this.message2;
         }
         
-        if( (params.partner == 'pm' || params.partner == 'tct' || params.partner == 'kk' || params.partner == 'yh') || (this.isAffiliate == "true") ) {
+        if( (params.partner == 'pm' || params.partner == 'tct' || params.partner == 'kk' || params.partner == 'yh') ) {
           timer(1000).
         pipe(takeUntil(this.subject)).
         subscribe(
