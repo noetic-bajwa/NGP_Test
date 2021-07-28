@@ -1,33 +1,16 @@
 import { Component, OnInit , AfterViewInit , ElementRef , ViewChild, OnDestroy } from '@angular/core';
 import { Title } from '@angular/platform-browser';
 import { Router } from '@angular/router';
-import { trigger, transition, useAnimation } from '@angular/animations';
-import { bounceInDown } from 'ng-animate';
 import { ActivatedRoute } from '@angular/router';
 import {CookieService} from 'ngx-cookie-service';
 import { timer } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
 import { Subject } from 'rxjs';
-declare let AOS: any;
-declare var $:any;
 
 @Component({
   selector: 'app-subscription',
   templateUrl: './subscription.component.html',
-  styleUrls: ['./subscription.component.css'] ,
-  animations: [
-    trigger('bounceInDown', [transition('* => *', useAnimation(bounceInDown, {
-      params: {
-        timing: 1,
-    
-        // Specify granular values for `translate` on axis Y during 'bounceInDown' 
-        a: '-3000px',
-        b: '25px',  
-        c: '-10px',
-        d: '5px',
-      }
-    }))])
-  ]
+  styleUrls: ['./subscription.component.css'] 
 })
 
 export class SubscriptionComponent implements OnInit  , OnDestroy {
@@ -45,9 +28,6 @@ export class SubscriptionComponent implements OnInit  , OnDestroy {
   
 
   bounceInDown: any;
-  number = Math.floor(Math.random() * (5 - 0 + 1)) + 0;
-  isActive=5; 
-  orderby: string;
   
   constructor(private pageTitle:Title,private router: Router,private route: ActivatedRoute, private cookieService:CookieService) {
     
@@ -56,7 +36,6 @@ export class SubscriptionComponent implements OnInit  , OnDestroy {
    isAffiliate = this.cookieService.get('isAffiliate');
 
   ngOnInit(): void {  
-    AOS.init();
     this.pageTitle.setTitle('Gamingo | Play');
     
       this.route.queryParams
@@ -126,8 +105,8 @@ export class SubscriptionComponent implements OnInit  , OnDestroy {
           (val) => {
             // location.href = "'sms:'+"+this.shortCode+"'?&body=Ngp'+' '"+this.subKeyword;
             this.namedElement.nativeElement.click();
-            console.log(this.subKeyword);
-            console.log(this.shortCode)
+            // console.log(this.subKeyword);
+            // console.log(this.shortCode)
             // this.cookieService.set('isAffiliate','');
             // document.write("Redirecting ...");
           },        
@@ -141,7 +120,7 @@ export class SubscriptionComponent implements OnInit  , OnDestroy {
 }
 
 ngOnDestroy() {
-  this.subject.next();
-  this.subject.unsubscribe();
+  // this.subject.next();
+  // this.subject.unsubscribe();
 } 
 }

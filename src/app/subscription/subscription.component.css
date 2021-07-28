@@ -28,79 +28,7 @@ h5{
     
 }
 
-.card{
-    box-shadow: rgba(99, 99, 99, 0.2) 0px 8px 18px 2px;
-    border-radius: 10px;
-    /* background-color: rgba(255, 255, 255, 0.425); */
-    border-color: #ee696b93;
-    background-color: rgba(255, 255, 255, 0.74);
-    border-width: 0.124rem;
-    /* border:none; */
-    
-    /* border-color:  rgba(85, 40, 158, 0.993); */
-  
-}
-.card > img{
-    border-radius: 10px;
-    border-bottom-left-radius:0 ;
-    border-bottom-right-radius:0 ;
-}
 
-.card:hover >img{
-    /* transform: scaleY(1.03);
-    transform: scaleX(1.03); */
-
-    
-    
-      -webkit-transition: all 1s ease;
-      -moz-transition: all  1s ease;
-      -ms-transition: all 1s ease;
-      transition: all 1s ease;
-
-}
-.card:hover >.msg{
-    
-    text-decoration: underline;
-    
-
-}
-
-
-.card:hover {
-    box-shadow: rgba(0, 0, 0, 0.25) 0px 0.0625em 0.0625em, rgba(0, 0, 0, 0.25) 0px 0.125em 0.5em, rgba(255, 255, 255, 0.1) 0px 0px 0px 1px inset;
-    transform: scale(1.05);
-    
-
-}
-
-
-
-
-
-
-.card-title{
-    position: absolute;
-    right: 0;
-    bottom: -10px;
-    left: 0;
-    padding: 1rem;
-    /* background-color: #efefef; */
-    text-align: center;
-    pointer-events: none;
-
-}
-
-
-
-.stars{
-    position: absolute;
-    right: 0;
-    bottom: 26px;
-    left: 0;
-    padding: 1rem;
-    text-align: center;
-
-}
 
 .msg{
     font-family: 'Mulish', sans-serif;
@@ -120,16 +48,9 @@ h5{
     left: 50%;
     margin-left:-60px;
     margin-top:-50px;
-  
-  
-    /* margin-bottom: 15px; */
- 
 }
 .msg:hover{
     text-decoration: underline;
-    /* background-color: rgba(85, 40, 158, 0.747); */
-    
- 
 }
 
 .msg2{
@@ -149,32 +70,12 @@ h5{
     bottom: -16px;
     left: 50%;
     margin-left:-60px;
-    margin-top:-50px;
-  
-  
-    /* margin-bottom: 15px; */
- 
+    margin-top:-50px; 
 }
 .msg2:hover{
     text-decoration: underline;
-    /* background-color: rgba(85, 40, 158, 0.747); */
-    
- 
 }
 
-.login_btn{
-    /* background-color: ivory; */
-    border: 1px solid #660F56 ;
-    background-color: rgba(255, 255, 255, 0);
-    border-radius: 25px;
-    width: 190px;
-    padding: 10px;
-    color: #660F56;
-    outline: none;
-    font-family: 'Mulish', sans-serif;
-    font-size: 14px;
-    font-weight: 900;
-}
 
 .subscribe_btn{
     background: rgb(2,0,36);
@@ -190,31 +91,8 @@ h5{
     outline: none;
 }
 
-.carousel-fade .carousel-item {
-  opacity: 0;
-  transition-duration: .6s;
-  transition-property: opacity;
- }
+
  
- .carousel-fade  .carousel-item.active,
- .carousel-fade  .carousel-item-next.carousel-item-left,
- .carousel-fade  .carousel-item-prev.carousel-item-right {
-   opacity: 1;
- }
- 
- .carousel-fade .active.carousel-item-left,
- .carousel-fade  .active.carousel-item-right {
-  opacity: 0;
- }
- 
- .carousel-fade  .carousel-item-next,
- .carousel-fade .carousel-item-prev,
- .carousel-fade .carousel-item.active,
- .carousel-fade .active.carousel-item-left,
- .carousel-fade  .active.carousel-item-prev {
-  transform: translateX(0);
-  transform: translate3d(0, 0, 0);
- }
 
  small{
      color: #660F56;
