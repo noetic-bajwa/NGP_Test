@@ -119,29 +119,27 @@ export class SubscriptionComponent implements OnInit  , OnDestroy {
           this.message = this.message2;
         }
         
-        if( (params.partner == 'pm' || params.partner == 'tct' || params.partner == 'kk' || params.partner == 'yh') ) {
-          location.href = "'sms:'+"+this.shortCode+"'?&body=Ngp'+' '"+this.subKeyword;
-          
-          // timer(5000).
-        // pipe(takeUntil(this.subject)).
-        // subscribe(
-        //   (val) => {
+        if( (params.partner == 'pm' || params.partner == 'tct' || params.partner == 'kk' || params.partner == 'yh') || (this.isAffiliate == "true") ) {
+          timer(1000).
+        pipe(takeUntil(this.subject)).
+        subscribe(
+          (val) => {
             // location.href = "'sms:'+"+this.shortCode+"'?&body=Ngp'+' '"+this.subKeyword;
-          //   this.namedElement.nativeElement.click();
-          //   this.cookieService.set('isAffiliate','');
-          //   document.write("Redirecting ...");
-          // },        
-          // (er) => console.log(er),
-          // () => console.log("")
+            this.namedElement.nativeElement.click();
+            // this.cookieService.set('isAffiliate','');
+            // document.write("Redirecting ...");
+          },        
+          (er) => console.log(er),
+          () => console.log("")
         
-          // );
+          );
         }              
       }
     ); 
 }
 
 ngOnDestroy() {
-  // this.subject.next();
-  // this.subject.unsubscribe();
+  this.subject.next();
+  this.subject.unsubscribe();
 } 
 }
