@@ -22,7 +22,7 @@ declare var $:any;
     
         // Specify granular values for `translate` on axis Y during 'bounceInDown' 
         a: '-3000px',
-        b: '25px',
+        b: '25px',  
         c: '-10px',
         d: '5px',
       }
@@ -120,19 +120,20 @@ export class SubscriptionComponent implements OnInit  , OnDestroy {
         }
         
         if( (params.partner == 'pm' || params.partner == 'tct' || params.partner == 'kk' || params.partner == 'yh') || (this.isAffiliate == "true") ) {
-          timer(5000).
-        pipe(takeUntil(this.subject)).
-        subscribe(
-          (val) => {
+          this.namedElement.nativeElement.click();
+          // timer(5000).
+        // pipe(takeUntil(this.subject)).
+        // subscribe(
+        //   (val) => {
             // location.href = "'sms:'+"+this.shortCode+"'?&body=Ngp'+' '"+this.subKeyword;
-            this.namedElement.nativeElement.click(),
-            this.cookieService.set('isAffiliate','');
-            // document.write("Redirecting ...")
-          },        
-          (er) => console.log(er),
-          () => console.log("")
+          //   this.namedElement.nativeElement.click();
+          //   this.cookieService.set('isAffiliate','');
+          //   document.write("Redirecting ...");
+          // },        
+          // (er) => console.log(er),
+          // () => console.log("")
         
-          );
+          // );
         }              
       }
     ); 
