@@ -47,7 +47,17 @@ export class SubscriptionComponent implements OnInit  , OnDestroy {
           
         }
 
-        if((params.partner == 'pm' || params.partner == 'tct' || params.partner == 'kk' || params.partner == 'yh')  && params.trackerId != '' && params.pub != " " && params.sub != ' ' ){
+        if(params.sub == '' || params.sub == undefined)
+        {
+          this.sub=''
+        }
+
+        if(params.pub == '' || params.pub == undefined)
+        {
+          this.pub=''
+        }
+
+        if((params.partner == 'pm' || params.partner == 'tct' || params.partner == 'kk' || params.partner == 'yh')  && params.trackerId != '' && params.pub != '' && params.sub != '' ){
           this.cookieService.set('isAffiliate','true');
           this.partner = params.partner;
           this.trackerId = params.trackerId;
@@ -55,7 +65,8 @@ export class SubscriptionComponent implements OnInit  , OnDestroy {
           this.sub = params.sub;
           this.subKeyword = this.partner+" "+this.trackerId+" "+this.pub+" "+this.sub;
         }else{
-          this.subKeyword = "ntl"}
+          this.subKeyword = "ntl"
+        }
 
         
         if(params.partner == ''  && params.trackerId== ''){
@@ -109,8 +120,8 @@ export class SubscriptionComponent implements OnInit  , OnDestroy {
           (val) => {
             // location.href = "'sms:'+"+this.shortCode+"'?&body=Ngp'+' '"+this.subKeyword;
             this.namedElement.nativeElement.click();
-            console.log(this.subKeyword);
-            console.log(this.shortCode)
+            // console.log(this.subKeyword);
+            // console.log(this.shortCode)
             // this.cookieService.set('isAffiliate','');
             // document.write("Redirecting ...");
           },        
