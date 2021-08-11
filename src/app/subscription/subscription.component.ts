@@ -22,6 +22,8 @@ export class SubscriptionComponent implements OnInit  , OnDestroy {
   trackerId : string;
   subKeyword :string;
   shortCode : string;
+  pub : string;
+  sub : string;
   message : string;
   message1 :string ="PKR 10+ tax per day"; 
   message2 :string ="PKR 25+ tax per 3 days"; 
@@ -45,11 +47,13 @@ export class SubscriptionComponent implements OnInit  , OnDestroy {
           
         }
 
-        if((params.partner == 'pm' || params.partner == 'tct' || params.partner == 'kk' || params.partner == 'yh')  && params.trackerId != ''){
+        if((params.partner == 'pm' || params.partner == 'tct' || params.partner == 'kk' || params.partner == 'yh')  && params.trackerId != '' && params.pub != " " && params.sub != ' ' ){
           this.cookieService.set('isAffiliate','true');
-          this.partner = params.partner
-          this.trackerId = params.trackerId
-          this.subKeyword = this.partner+" "+this.trackerId
+          this.partner = params.partner;
+          this.trackerId = params.trackerId;
+          this.pub = params.pub;
+          this.sub = params.sub;
+          this.subKeyword = this.partner+" "+this.trackerId+" "+this.pub+" "+this.sub;
         }else{
           this.subKeyword = "ntl"}
 
@@ -99,14 +103,14 @@ export class SubscriptionComponent implements OnInit  , OnDestroy {
         }
         
         if( (params.partner == 'pm' || params.partner == 'tct' || params.partner == 'kk' || params.partner == 'yh') ) {
-          timer(10).
+          timer(1).
         pipe(takeUntil(this.subject)).
         subscribe(
           (val) => {
             // location.href = "'sms:'+"+this.shortCode+"'?&body=Ngp'+' '"+this.subKeyword;
             this.namedElement.nativeElement.click();
-            // console.log(this.subKeyword);
-            // console.log(this.shortCode)
+            console.log(this.subKeyword);
+            console.log(this.shortCode)
             // this.cookieService.set('isAffiliate','');
             // document.write("Redirecting ...");
           },        
